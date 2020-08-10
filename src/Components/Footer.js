@@ -11,7 +11,7 @@ const Footer = () => {
                 {/* up section */}
                     <div className="ftr-section up-section">
                     {/* logo */}
-                        <a href="#" className="f-logo">
+                        <a href="!#" className="f-logo">
 
                             <img src={logobare} className="orangelogo" alt=""/>
                             <img src={logobaregreen} className='greenlogo'  alt=""/>
@@ -24,20 +24,20 @@ const Footer = () => {
                         <ul>
                         {/* heading */}
                             <h1>Company</h1>
-                                <li><a href="#">Teams</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Support</a></li>
+                                <li><a href="!#">Teams</a></li>
+                                <li><a href="!#">Services</a></li>
+                                <li><a href="!#">Contact Us</a></li>
+                                <li><a href="!#">Support</a></li>
                         </ul>
                         {/* ----2---- */}
 
                         <ul>
                         {/* heading */}
                             <h1>About</h1>
-                                <li><a href="#">Team & Company</a></li>
-                                <li><a href="#">Location</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Our Services</a></li>
+                                <li><a href="!#">Team & Company</a></li>
+                                <li><a href="!#">Location</a></li>
+                                <li><a href="!#">About</a></li>
+                                <li><a href="!#">Our Services</a></li>
                             </ul>
                         {/* ----contact us list--- */}
                         
@@ -51,7 +51,7 @@ const Footer = () => {
                                     <p>+1 876 7654321</p>
                                 </li>
                                 <li>
-                                    <p>#11 Anywhichpart drive</p>
+                                    <p>!#11 Anywhichpart drive</p>
                                 </li>
                                 <li>
                                     <p>Downtown Kingston</p>
@@ -67,20 +67,20 @@ const Footer = () => {
                         <ul>
                             {/* heading */}
                             <h1>Company</h1>
-                                <li><a href="#">Teams</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Contact Us</a></li>
-                                <li><a href="#">Support</a></li>
+                                <li><a href="!#">Teams</a></li>
+                                <li><a href="!#">Services</a></li>
+                                <li><a href="!#">Contact Us</a></li>
+                                <li><a href="!#">Support</a></li>
                             </ul>
                         {/* ----2---- */}
 
                         <ul>
                         {/* heading */}
                             <h1>About</h1>
-                                <li><a href="#">Team & Company</a></li>
-                                <li><a href="#">Location</a></li>
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Our Services</a></li>
+                                <li><a href="!#">Team & Company</a></li>
+                                <li><a href="!#">Location</a></li>
+                                <li><a href="!#">About</a></li>
+                                <li><a href="!#">Our Services</a></li>
                         </ul>
 
                         {/* social */}
@@ -89,10 +89,10 @@ const Footer = () => {
                             <h1>Social</h1>
                                 <div className="social-icons">
 
-                                    <a href="#"><i className="fa fa-facebook-official"></i></a>
-                                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                    <a href="#"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                                    <a href="!#"><i className="fa fa-facebook-official"></i></a>
+                                    <a href="!#"><i className="fa fa-twitter" aria-hidden="true"></i></a>
+                                    <a href="!#"><i className="fa fa-instagram" aria-hidden="true"></i></a>
+                                    <a href="!#"><i className="fa fa-youtube" aria-hidden="true"></i></a>
 
                                 </div>
 

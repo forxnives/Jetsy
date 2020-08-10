@@ -2,6 +2,8 @@ import React from 'react';
 import fernleft from '../img/tintin.png';
 import fernright from '../img/torsty.png';
 
+
+
 const Gifts = () => {
     return (
 
@@ -10,7 +12,7 @@ const Gifts = () => {
 
             <div className="about-container">
 
-                <div className="about-fern">
+                <div className="about-fern about-fernleft">
                     <img src={fernleft} alt=""/>
                 </div>
 
@@ -45,14 +47,13 @@ const Gifts = () => {
                             <span>Your privacy is the highest priority of our dedicated team. And if you ever need assistance, we are always ready to step in for support.</span>
 
                         </div>
-
                     </div>
 
                     <div className="about-actioncall">
 
                         <h1>Are you a Jamaican creator with something to sell?</h1>
 
-                        <a href="#">
+                        <a href="!#">
                             <div className="about-actioncall_button">
                                 <span>Join Us!</span>
                             </div>
@@ -61,30 +62,13 @@ const Gifts = () => {
 
                 </div>
 
-
-                <div className="about-fern">
+                <div className="about-fern about-fernright">
                     <img src={fernright} alt=""/>
                 </div>
 
-
-
-
-
-
-
-
             </div>
 
-
-
-
-
-
-
-
         </section>
-
-
 
     )
 

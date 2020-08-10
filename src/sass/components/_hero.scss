@@ -8,10 +8,16 @@
     justify-content: center;
     overflow: hidden;
     border-radius: 5px;
+    border: .5px solid $color-ligher-shadow;
 
     a {
         text-decoration: none;
         color: black;
+        
+    }
+
+    .imglink {
+        display: block;
     }
 
 
@@ -22,6 +28,7 @@
         min-width: 215px;
         width: 100%;
         height: auto;
+        display: block;
         // vertical-align: bottom;
 
 
@@ -60,7 +67,9 @@
             }
 
             .br {
-                height: 20%;
+                // height: 20%;
+                height: 60px;
+
             }
 
             .sub-heading {
@@ -117,6 +126,7 @@
             margin-top: 3%;
             border-radius: 5px;
             text-align: center;
+            border: .5px solid $color-ligher-shadow;
             // font-size: .9rem;
 
 
@@ -149,6 +159,7 @@
         max-width: 315px;
         width: 100%;
         height: auto;
+        border: .5px solid $color-ligher-shadow;
         border-radius: 5px;
         // transform: scale(.8);
         // vertical-align: bottom;
