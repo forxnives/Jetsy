@@ -74,6 +74,7 @@
     
     &-cart {
         margin-right: 2rem;
+        position: relative;
 
 
 
@@ -84,21 +85,91 @@
 
         &__btn {
 
+            
+            position: relative;
+
+            &-icon {
+                img {
+                    position: absolute;
+                    top: -41px;
+                    left: 3px;
+                    transform: scale(1.15);
+                    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+                
+                }
+    
+                svg {
+                    width: 3rem;
+                    // margin-top: 2px;
+                    // margin-right: 10px;
+            
+                }
+
+
+
+            }
+
+            &-items {
+                position: absolute;
+                top: -22.0px;
+                left: 24.9px;
+                color: white;
+                font-weight: bold;
+
+            }
+
 
         }
+
+        // &__btn-items {
+        //     position
+        // }
 
 
 
         &__btn-icon {
 
-            svg {
-                width: 2.5rem;
-                // margin-top: 2px;
-                // margin-right: 10px;
-        
-            }
+
+
 
         }
+
+
+        .cart-dropdown-container {
+
+            position: absolute;
+            top: 50px;
+            left: -268px;
+            z-index: 1;
+            border: 2px solid black ;
+
+
+
+            .cart-dropdown {
+                position: relative;
+                background:white;
+                border-radius: .4em;
+                height: 450px;
+                width: 400px;
+
+            }
+            
+            .cart-dropdown:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 50%;
+                width: 0;
+                height: 0;
+                border: 24px solid transparent;
+                border-bottom-color: black;
+                border-top: 0;
+                margin-left: 60px;
+                margin-top: -24px;
+            }
+        }
+
+
 
     }
 
