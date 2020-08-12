@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import logo from '../../img/logo.jpg';
 
 
@@ -8,11 +9,14 @@ import NavButtons from './NavButtons/NavButtons';
 import Dropdown from './Dropdown/Dropdown';
 
 
+
 // import Dropdown from '../..'
 
 
 
 const Nav = () => {
+
+
     return (
 
         <section className="nav-section">
@@ -46,4 +50,7 @@ const Nav = () => {
 
 }
 
-export default withRouter(Nav);
+
+
+
+export default Nav;

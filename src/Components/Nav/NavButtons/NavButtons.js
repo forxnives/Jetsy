@@ -5,6 +5,7 @@ import Cart from './Cart/Cart';
 
 const NavButtons = () => {
 
+
     return (
 
         <div className="nav-buttons">

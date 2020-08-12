@@ -5,7 +5,7 @@ import { withRouter } from 'react-router-dom';
 
 const ProductPage = (props) => {
 
-    console.log(props)
+
     return (
     
         <div>

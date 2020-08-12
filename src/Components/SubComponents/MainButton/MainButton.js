@@ -4,6 +4,7 @@ import {withRouter} from 'react-router-dom';
 
 
 
+
 const MainButton = ({children, link, history, ...otherProps}) => {
 
     // console.log(history)
@@ -14,14 +15,14 @@ const MainButton = ({children, link, history, ...otherProps}) => {
 
             {
             link ?
-            (
+            ( 
 
-                <button onClick={()=> history.push(link)}>
+                <button className='sub-form-button' onClick={()=> history.push(link)}>
                     {children}
                 </button>
             ) : 
 
-                <button type='submit' className='sub-form-button' {...otherProps}>
+                <button  className='sub-form-button' {...otherProps}>
                 
                     {children}
 

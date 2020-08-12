@@ -2,6 +2,11 @@ import React from 'react';
 import FormInput from '../SubComponents/FormInput/FormInput';
 import MainButton from '../SubComponents/MainButton/MainButton';
 
+import { auth, signInWithGoogle } from '../../Firebase/firebase.utils';
+import {withRouter} from 'react-router-dom';
+
+
+
 
 
 class Login extends React.Component {
@@ -13,16 +18,40 @@ class Login extends React.Component {
             email: '',
             password:''
         }
+
+        this.history = props.history;
+
+
+
     }
 
-    handleSubmit = (event) => {
+    propTest = (props) => {
+        console.log(props)
+    }
+
+    handleSubmit = async (event) => {
         event.preventDefault();
-        this.setState( {
 
-            email: '',
-            password: ''
+        const { email, password } = this.state;
 
-        } );
+        try {
+            await auth.signInWithEmailAndPassword(email, password);
+
+
+            this.setState( {
+
+                email: '',
+                password: ''
+    
+            });
+
+            // this.history.push('/')
+
+        } catch (error){
+            alert(error)
+        }
+
+
 
     }
 
@@ -35,12 +64,21 @@ class Login extends React.Component {
         })
     }
 
+    handleGoogleSignIn = async () => {
+
+        await signInWithGoogle();
+        this.history.push('/')
+
+    }
+
 
     render() {
 
+
+
         return(
 
-            <div className="signin-container">
+            <div className="signup-signin-container">
                 <div className="login">
                     <h1>Already Have an Account?</h1>
                     <form onSubmit={this.handleSubmit} className="login-form">
@@ -52,8 +90,12 @@ class Login extends React.Component {
                             <span>password</span>
                             <FormInput name='password' value={this.state.password} type='password' handleChange={this.handleChange} required />
                         </div>
-                        <MainButton>
-                            Submit Form
+                        <MainButton type='submit'>
+                            Sign In
+                        </MainButton>
+
+                        <MainButton onClick={this.handleGoogleSignIn} >
+                            Sign in with Google
                         </MainButton>
                     </form>
                 </div>
@@ -63,5 +105,5 @@ class Login extends React.Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);
 
