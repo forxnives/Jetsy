@@ -3,6 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './Firebase/firebase.utils';
 import { connect } from 'react-redux';
 import setCurrentUser from './redux/user/user.actions';
+import toggleCartHidden from './redux/cart/cart.actions';
 
 import HomePage from './Pages/Homepage';
 import Shop from './Pages/Shop';
@@ -17,6 +18,12 @@ import Footer from './Components/Footer';
 
 
 class App extends React.Component {
+
+
+  testFunc() {
+    const { toggleCartHidden } = this.props;
+    toggleCartHidden()
+  }
 
 
   //declaring variable for unsubscribe function to be returned
@@ -64,6 +71,8 @@ class App extends React.Component {
 
     return (
       <div>
+
+        {/* <button onClick={() => this.testFunc()}>testMe</button> */}
   
         <Nav />
         
@@ -84,7 +93,8 @@ class App extends React.Component {
 
 
 const mapDispatchToProps = dispatch => ({
-  setCurrentUser: user => dispatch(setCurrentUser(user))
+  setCurrentUser: user => dispatch(setCurrentUser(user)),
+  toggleCartHidden: () => dispatch(toggleCartHidden())
 })
 
 const mapStateToProps = ({ user }) => ({

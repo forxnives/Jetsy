@@ -3,21 +3,27 @@ import React from 'react';
 import { connect } from 'react-redux';
 import dot from '../../../../img/bullet (2).svg';
 import CartDropdown from '../../../CartDropdown/CartDropdown';
-import { toggleCartHidden } from '../../../../redux/cart/cart.actions';
+import toggleCartHidden from '../../../../redux/cart/cart.actions';
 
-const Cart = ({currentUser, hidden}) => {
+
+
+
+
+const Cart = ({currentUser, hidden, toggleCartHidden}) => {
 
 
     const handleClick = () => {
         toggleCartHidden();
+        // console.log(hidden)
+
 
     }
 
     console.log(hidden)
     return (
 
-        <div className="nav-buttons-cart">
-            <a className="nav-buttons-cart__btn" onClick={handleClick}>
+        <div className="nav-buttons-cart" onClick={handleClick}>
+            <a className="nav-buttons-cart__btn" >
 
                 <span className="nav-buttons-cart__btn-icon" >
 
@@ -35,12 +41,14 @@ const Cart = ({currentUser, hidden}) => {
 
             </a>
             {/* <span>number</span> */}
-            {!hidden ? (<CartDropdown />):null}
+            {!hidden && currentUser ? (<CartDropdown />):null}
 
         </div>
         
     )
 }
+
+
 
 
 const mapStateToProps = ( {user:{currentUser}, cart:{hidden}  }) => ({
@@ -49,7 +57,7 @@ const mapStateToProps = ( {user:{currentUser}, cart:{hidden}  }) => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    toggleCartHidden: dispatch(toggleCartHidden())
+    toggleCartHidden: () => dispatch(toggleCartHidden())
 })
     
 
