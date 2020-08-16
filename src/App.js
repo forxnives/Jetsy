@@ -3,7 +3,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './Firebase/firebase.utils';
 import { connect } from 'react-redux';
 import setCurrentUser from './redux/user/user.actions';
-import toggleCartHidden from './redux/cart/cart.actions';
+import { toggleCartHidden } from './redux/cart/cart.actions';
 
 import HomePage from './Pages/Homepage';
 import Shop from './Pages/Shop';

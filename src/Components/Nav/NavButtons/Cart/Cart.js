@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import dot from '../../../../img/bullet (2).svg';
 import CartDropdown from '../../../CartDropdown/CartDropdown';
-import toggleCartHidden from '../../../../redux/cart/cart.actions';
+import { toggleCartHidden } from '../../../../redux/cart/cart.actions';
 
 
 

@@ -2,7 +2,6 @@
     font-size: 1.6rem;
 }
 
-
 .popular {
 
 
@@ -23,18 +22,24 @@
         position: relative;
         margin-bottom: 30px;
 
-        
 
+        &:hover {
 
-
+                
+            .popular-item__cart {
+                transition: .6 all ease;
+                opacity: 1;
+            }
+        }
 
 
         &__image {
-
+            // opacity: .2;
 
 
             img {
                 max-width: 250px;
+
                 min-width: 150px;
                 width: 100%;
                 height: auto;
@@ -42,16 +47,95 @@
 
                 &:hover {
 
-                   
                     -webkit-box-shadow: 0px -1px 6px -1px rgba(0,0,0,0.74);
                     -moz-box-shadow: 0px -1px 6px -1px rgba(0,0,0,0.74);
                     box-shadow: 0px -1px 6px -1px rgba(0,0,0,0.74);
 
-
                 }
 
-
             }
+
+            .img-hover {
+                filter: 
+                // invert(27%)
+                //  sepia(20%) 
+                //  saturate(28%) 
+                //  hue-rotate(346deg) 
+                 brightness(75%) 
+                //  contrast(40%);
+
+                opacity(.8)
+            }
+
+
+        }
+
+
+        &__cart {
+
+            position: absolute;
+            top: 35px;
+            right: 5px;
+            width: 30px;
+
+            opacity: 0;
+
+            border-radius: 5px;
+            padding: 3px;
+
+            svg {
+                display: block;
+                fill: $color-cultured;
+                // opacity: .4;
+                mix-blend-mode: soft-light;
+                // box-shadow: inset 0 1px 2px 1px rgba($color-pinetree, $alpha: .3);
+
+
+                // filter: 
+                // // invert(27%) 
+                // // sepia(10%) 
+                // // saturate(2878%) 
+                // // hue-rotate(346deg) 
+                // // brightness(100%) 
+                // // contrast(97%)
+                // opacity(.2)
+                // ;
+            }
+
+
+
+
+            &:hover {
+                background-color: rgba($color-cultured, .3);
+                // fill: black;
+
+
+                svg {
+                    fill: black;
+                    mix-blend-mode: normal;
+                }
+            }
+
+
+
+        }
+
+
+        .svg-heart {
+            top: 5px;
+
+
+        }
+
+        .hover-layer {
+            position: absolute;
+            background-color: black;
+            top: 0;
+            left: 0;
+           
+            width: 200px;
+            height: 150px;
+            
         }
 
         &__info {
