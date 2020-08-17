@@ -152,73 +152,7 @@
 
         }
 
-        .cart-dropdown-triangle{
 
-            position: relative;
-            top: 17px;
-            left: -123.3px;
-            z-index: 2;
-            // border: 2px solid black ;
-            border-radius: .4em;
-
-            
-            &:before {
-                content: '';
-                position: absolute;
-                top: 0;
-                left: 50%;
-                width: 0;
-                height: 0;
-                border: 24px solid transparent;
-                border-bottom-color: rgba(#1F180A, .2) ;
-                border-top: 0;
-                margin-left: 100px;
-                margin-top: -24px;
-            }
-
-            &:after {
-                content: '';
-                position: absolute;
-                top: 1px;
-                left: 50%;
-                width: 0;
-                height: 0;
-                border: 24px solid transparent;
-                border-bottom-color: white;
-                border-top: 0;
-                margin-left: 100px;
-                margin-top: -24px;
-            }
-        }
-
-
-        .cart-dropdown-container {
-
-            position: absolute;
-            top: 50px;
-            left: -340px;
-            z-index: 1;
-            border: 1px solid rgba(#1F180A, .2) ;
-            border-radius: .4em;
-            box-shadow: 0 2px 40px 1px rgba($color-pinetree, $alpha: .2);
-            // animation: fadeIn ease 20s;
-
-
-
-            .cart-dropdown {
-                position: relative;
-                background:white;
-                border-radius: .4em;
-                height: 450px;
-                width: 400px;
-
-
-            }
-
-
-            
-
-        }
 
         
 

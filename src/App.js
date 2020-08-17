@@ -9,6 +9,7 @@ import HomePage from './Pages/Homepage';
 import Shop from './Pages/Shop';
 import ProductPage from './Pages/ProductPage';
 import SignInSignUp from './Pages/SignIn-SignUp';
+import CartPage from './Pages/CartPage';
 
 import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer';
@@ -78,6 +79,8 @@ class App extends React.Component {
         
         <Switch>
           <Route exact path='/' component={HomePage} />
+          <Route exact path='/cartitems' component={CartPage} />
+
           <Route exact path='/shop/:giftcat' component={Shop} />
           <Route exact path='/product/:itemId' component={ProductPage} />
           <Route exact path='/signin' render={() => this.props.currenUser ? (<Redirect to='/'/>): (<SignInSignUp/>)} />

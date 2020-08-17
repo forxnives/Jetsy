@@ -3,7 +3,6 @@ import ItemCard from './ItemCard/ItemCard';
 
 import ProductData from '../../ProductData';
 
-
 import InfiniteCarousel from 'react-leaf-carousel';
 
 
@@ -11,12 +10,19 @@ import InfiniteCarousel from 'react-leaf-carousel';
 
 //maps popular product data to Item Cards
 
-const productList = ProductData.map( ({price, ...otherSectionProps}) => (
+// const productList = ProductData.map( ({price, ...otherSectionProps}) => (
 
-    <ItemCard price={'USD ' + price} {...otherSectionProps } />
+//     <ItemCard price={'USD ' + price} {...otherSectionProps } />
+
+// ))
+    
+
+const productList = ProductData.map( item => (
+
+    <ItemCard item={item} />
 
 ))
-    
+
 
 
 

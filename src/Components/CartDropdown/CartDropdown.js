@@ -1,7 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import CartItem from '../CartItem/CartItem';
 
 
-const CartDropdown = () => {
+
+const CartDropdown = ({cartItems}) => {
+
+    const cartJSX = cartItems.map(
+        item => (
+            <CartItem item={item} />
+        )
+    )
+
+
     return(
         <div className="fade-in">
 
@@ -9,7 +20,17 @@ const CartDropdown = () => {
             <div className="cart-dropdown-container">
 
                 <div className="cart-dropdown">
+                    {cartJSX}
 
+                </div>
+                <div className="checkout-button">
+                    <div className="itemcount">
+                        <h1>{cartItems.length} items</h1>
+
+                    </div>
+                    <div className="button">
+                        CHECKOUT
+                    </div>
                 </div>
             </div>
 
@@ -18,4 +39,9 @@ const CartDropdown = () => {
     )
 }
 
-export default CartDropdown;
+
+const mapStateToProps = state => ({
+    cartItems: state.cart.cartItems
+})
+
+export default connect(mapStateToProps)(CartDropdown);
