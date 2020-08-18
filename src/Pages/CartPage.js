@@ -1,22 +1,20 @@
 import React from 'react';
 import ProductData from '../ProductData';
 import { connect } from 'react-redux'
+import { selectCartItems } from '../redux/cart/cart.selectors';
 
 import CartItem from '../Components/CartItem/CartItem';
 
 
 const CartPage = ({cartList}) => {
 
-    console.log(ProductData)
+
 
     const cartJSX = cartList.map(
         item => (
             <CartItem item={item} />
         )
     )
-
-
-
 
 
 
@@ -31,7 +29,7 @@ const CartPage = ({cartList}) => {
 
 
 const mapStateToProps = state => ({
-    cartList : state.cart.cartItems
+    cartList : selectCartItems(state)
 })
 
 

@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import CartItem from '../CartItem/CartItem';
+import { selectCartItems } from '../../redux/cart/cart.selectors';
+
 
 
 
@@ -13,26 +15,62 @@ const CartDropdown = ({cartItems}) => {
     )
 
 
+    const totalPriceCalc = (cartItems) => {
+
+        const priceSum = cartItems.map(itemObj => (
+            itemObj.cartquantity * itemObj.price
+            )  
+        ).reduce((a, b) => a + b, 0)
+
+
+        return <h1>Total: USD ${priceSum.toFixed(2)}</h1>
+
+
+    }
+
+
     return(
         <div className="fade-in">
 
             <div className="cart-dropdown-triangle"></div>
-            <div className="cart-dropdown-container">
 
-                <div className="cart-dropdown">
-                    {cartJSX}
+            {
+                cartItems.length > 0 ? 
+                <div className="cart-dropdown-container">
 
-                </div>
-                <div className="checkout-button">
-                    <div className="itemcount">
-                        <h1>{cartItems.length} items</h1>
+                    <div className="cart-title">
+                        <h1>Cart</h1>
+                    </div>
+
+                    <div className="cart-dropdown">
+                        {cartJSX}
 
                     </div>
-                    <div className="button">
-                        CHECKOUT
+                    <div className="checkout-button">
+                        <div className="itemcount">
+
+                            {totalPriceCalc(cartItems)}
+                    {/* 
+                            <h1>{cartItems.length} items</h1> */}
+
+                        </div>
+                        <div className="button">
+                            CHECKOUT
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                :
+
+                <div className="cart-dropdown-container-empty">
+                    <span>Your cart is empty</span>
+                </div>
+
+            
+            }
+
+
+
 
         </div>
 
@@ -41,7 +79,7 @@ const CartDropdown = ({cartItems}) => {
 
 
 const mapStateToProps = state => ({
-    cartItems: state.cart.cartItems
+    cartItems: selectCartItems(state)
 })
 
 export default connect(mapStateToProps)(CartDropdown);
