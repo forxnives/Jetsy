@@ -3,12 +3,15 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import { auth } from '../../../../Firebase/firebase.utils';
+import { createStructuredSelector } from 'reselect';
+import { selectCurrentUser } from '../../../../redux/user/user.selectors';
+
 
 
 
 const Signin = ({currentUser}) => {
 
-    // console.log(currentUser)
+
 
 
 
@@ -41,8 +44,8 @@ const Signin = ({currentUser}) => {
 }
 
 
-const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+const mapStateToProps = createStructuredSelector({
+    currentUser: selectCurrentUser
 });
 
 

@@ -1,0 +1,144 @@
+.checkout {
+
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 400px;
+    // border: 3px solid black;
+
+    &-header {
+        display: flex;
+        // justify-content: space-between;
+
+        width: 100%;
+        padding-bottom: 20px;
+        border-bottom: 3px solid black;
+
+        // &__cat {
+            
+        // }
+
+        .product{
+            width: 32%;
+            padding-left: 2.5%;
+        }
+
+        .description {
+            width: 30%;
+        }
+
+        .quantity {
+            width: 17%;
+        }
+
+        .price {
+            width: 13%;
+        }
+
+        .remove {
+            width: 8%;
+        }
+    }
+
+    &-item {
+        display: flex;
+        // justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+        // border: 3px solid black;
+        width: 100%;
+        border-bottom: 1px solid black;
+
+        &:last-child {
+            border-bottom: 3px solid black;
+        }
+
+        &__cat {
+            // border: 3px solid black;
+            // width: 20%;
+            font-size: 1.6rem;
+
+        }
+
+        &__image {
+
+            width: 32%;
+
+
+
+            img {
+                // margin: auto;
+                display: block;
+                height: auto;
+                max-width:80%;
+                // max-height:100%;
+                // vertical-align: 0;
+            }
+        }
+
+        &__description {
+            width: 30%;
+            
+            span {
+                display: block;
+            }
+            .sellertxt {
+                font-size: 1.2rem;
+            }
+        }
+
+        &__quantity {
+            width: 17%;
+            padding-left: 2.5%;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+
+            .quantity {
+                padding-left: 1%;
+                cursor: default;
+            }
+
+            // span {
+
+            // }
+            // align-items: flex-start;
+            // justify-content: center;
+        }
+
+        &__price {
+            width: 13%;
+            // padding-left: 1%;
+        }
+
+        &__remove {
+            width: 8%;
+            padding-left: 2%;
+            font-weight: bold;
+            
+            span{
+                cursor: pointer;
+            }
+        }
+
+    }
+
+    &-total {
+        width: 100%;
+        margin: 20px 0;
+        text-align: right;
+        display: flex;
+
+
+        &__txt {
+            width: 75%;
+        }
+
+        &__price {
+            text-align: center;
+            width: 13%;
+        }
+
+
+    }
+}

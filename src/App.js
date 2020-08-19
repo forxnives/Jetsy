@@ -2,17 +2,21 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './Firebase/firebase.utils';
 import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
 import setCurrentUser from './redux/user/user.actions';
 import { toggleCartHidden } from './redux/cart/cart.actions';
+import { selectCurrentUser } from './redux/user/user.selectors';
 
 import HomePage from './Pages/Homepage';
 import Shop from './Pages/Shop';
 import ProductPage from './Pages/ProductPage';
 import SignInSignUp from './Pages/SignIn-SignUp';
 import CartPage from './Pages/CartPage';
+import CheckoutPage from './Pages/CheckoutPage';
 
 import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer';
+// import { selectCartItemsCount } from './redux/cart/cart.selectors';
 
 
 
@@ -83,6 +87,7 @@ class App extends React.Component {
           <Route exact path='/shop/:giftcat' component={Shop} />
           <Route exact path='/product/:itemId' component={ProductPage} />
           <Route exact path='/signin' render={() => this.props.currenUser ? (<Redirect to='/'/>): (<SignInSignUp/>)} />
+          <Route exact path='/checkout' component={CheckoutPage} />
         </Switch>
   
         <Footer />
@@ -99,8 +104,12 @@ const mapDispatchToProps = dispatch => ({
   toggleCartHidden: () => dispatch(toggleCartHidden())
 })
 
-const mapStateToProps = ({ user }) => ({
-  currenUser: user.currentUser
+
+
+const mapStateToProps = createStructuredSelector ({
+  currenUser: selectCurrentUser
 })
+
+
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

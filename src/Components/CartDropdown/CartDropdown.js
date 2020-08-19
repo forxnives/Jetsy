@@ -1,12 +1,16 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import CartItem from '../CartItem/CartItem';
-import { selectCartItems } from '../../redux/cart/cart.selectors';
+
+
+import { createStructuredSelector } from 'reselect';
+import { selectCartItems, selectCartTotalPrice } from '../../redux/cart/cart.selectors';
 
 
 
 
-const CartDropdown = ({cartItems}) => {
+const CartDropdown = ({cartItems, cartTotalPrice, history}) => {
 
     const cartJSX = cartItems.map(
         item => (
@@ -15,18 +19,6 @@ const CartDropdown = ({cartItems}) => {
     )
 
 
-    const totalPriceCalc = (cartItems) => {
-
-        const priceSum = cartItems.map(itemObj => (
-            itemObj.cartquantity * itemObj.price
-            )  
-        ).reduce((a, b) => a + b, 0)
-
-
-        return <h1>Total: USD ${priceSum.toFixed(2)}</h1>
-
-
-    }
 
 
     return(
@@ -49,12 +41,11 @@ const CartDropdown = ({cartItems}) => {
                     <div className="checkout-button">
                         <div className="itemcount">
 
-                            {totalPriceCalc(cartItems)}
-                    {/* 
-                            <h1>{cartItems.length} items</h1> */}
+                        <h1>Total: USD ${cartTotalPrice}</h1>
+
 
                         </div>
-                        <div className="button">
+                        <div onClick={() => history.push('/checkout')} className="button">
                             CHECKOUT
                         </div>
                     </div>
@@ -78,8 +69,9 @@ const CartDropdown = ({cartItems}) => {
 }
 
 
-const mapStateToProps = state => ({
-    cartItems: selectCartItems(state)
+const mapStateToProps = createStructuredSelector({
+    cartItems: selectCartItems,
+    cartTotalPrice: selectCartTotalPrice
 })
 
-export default connect(mapStateToProps)(CartDropdown);
+export default withRouter(connect(mapStateToProps)(CartDropdown));
