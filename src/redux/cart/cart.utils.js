@@ -10,7 +10,6 @@ export const addItemFunction = (cartItems, itemToAdd) => {
             item.id === itemToAdd.id
                 ? {...item, cartquantity: item.cartquantity + 1 }
                 : item 
-
         )
 
     }else {
@@ -18,12 +17,10 @@ export const addItemFunction = (cartItems, itemToAdd) => {
         return [...cartItems, { ...itemToAdd, cartquantity: 1 }]
     
     }
-
 }
 
 export const clearItemFunction = (cartItems, itemToRemove) => {
     return cartItems.filter(item => item.id !== itemToRemove.id)
-
 
 }
 
