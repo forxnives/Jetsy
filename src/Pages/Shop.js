@@ -1,19 +1,21 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Route, withRouter } from 'react-router-dom';
+
+import ShopCategory from '../Components/ShopCategory/ShopCategory';
+import ShopHome from '../Components/ShopHome/ShopHome';
 
 
 
-const Shop = (props) => {
+const Shop = ({match}) => {
 
-    console.log(props)
+    
+
     return (
     
         <div>
 
-
-            <h1>{props.match.params.giftcat}</h1>
-
-
+            <Route exact path={`${match.path}`} component={ShopHome} />
+            <Route path={`${match.path}/:category`} component={ShopCategory} />
 
         </div>
 

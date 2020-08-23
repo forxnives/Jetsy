@@ -5,18 +5,23 @@ import ItemCard from './ItemCard/ItemCard';
 
 import InfiniteCarousel from 'react-leaf-carousel';
 import { connect } from 'react-redux';
-import { selectDirectory } from '../../redux/directory/directory.selectors';
+import { selectPopularItems } from '../../redux/directory/directory.selectors';
 import { createStructuredSelector } from 'reselect';
+import { directoryPopular } from '../../redux/directory/directory.utils';
 
 
     
 
 
 
-const Popular = ({ directory }) => {
+const Popular = ({ popularItems }) => {
+
+    // const popularItems = directoryPopular(directory);
 
 
-    const productList = directory.map( item => (
+
+
+    const popularList = popularItems.map( item => (
 
         <ItemCard item={item} />
     
@@ -66,7 +71,7 @@ const Popular = ({ directory }) => {
 
                     >
 
-                    {productList}
+                    {popularList}
 
                 </InfiniteCarousel>
             </div>
@@ -78,7 +83,7 @@ const Popular = ({ directory }) => {
 
 
 const mapStateToProps = createStructuredSelector({
-    directory: selectDirectory
+    popularItems: selectPopularItems
 })
 
 

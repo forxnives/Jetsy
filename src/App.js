@@ -18,15 +18,23 @@ import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer';
 // import { selectCartItemsCount } from './redux/cart/cart.selectors';
 
-
-
+import productJSON from './productJSON'
+import { directoryPopular } from './redux/directory/directory.utils'
 
 class App extends React.Component {
 
 
   testFunc() {
-    const { toggleCartHidden } = this.props;
-    toggleCartHidden()
+
+    const ting = directoryPopular(productJSON)
+
+    // const testArray = [4, 9, 2, 8]
+
+    // const tester = testArray.findIndex(item => item === 46)
+
+
+    console.log(ting)
+
   }
 
 
@@ -84,7 +92,7 @@ class App extends React.Component {
           <Route exact path='/' component={HomePage} />
           <Route exact path='/cartitems' component={CartPage} />
 
-          <Route exact path='/shop/:giftcat' component={Shop} />
+          <Route path='/shop' component={Shop} />
           <Route exact path='/product/:itemId' component={ProductPage} />
           <Route exact path='/signin' render={() => this.props.currenUser ? (<Redirect to='/'/>): (<SignInSignUp/>)} />
           <Route exact path='/checkout' component={CheckoutPage} />
