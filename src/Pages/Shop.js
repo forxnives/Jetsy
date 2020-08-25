@@ -3,6 +3,7 @@ import { Route, withRouter } from 'react-router-dom';
 
 import ShopCategory from '../Components/ShopCategory/ShopCategory';
 import ShopHome from '../Components/ShopHome/ShopHome';
+import ShopItemDisplay from '../Components/ShopItemDisplay/ShopItemDisplay';
 
 
 
