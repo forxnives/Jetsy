@@ -22,13 +22,23 @@ export const directoryPopular = (directory) => {
 }
 
 
-export const directoryCategory = (directory, categoryParam) => {
+let checker = (arr, target) => target.every(v => arr.includes(v));
+
+
+
+export const directoryCategory = (directory, categoryArray) => {
 
     return directory.reduce((accumulator, currentValue) => {
 
-        if (currentValue.categories.includes(categoryParam)){
+
+        if (checker(currentValue.categories, categoryArray)) {
             accumulator.push(currentValue)
-        };
+        }
+
+
+        // if (currentValue.categories.includes(categoryArray)){
+        //     accumulator.push(currentValue)
+        // };
 
         return accumulator;
 

@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
 import { selectCategory } from '../../redux/directory/directory.selectors';
-import ShopItemCard from '../ShopItemCard/ShopItemCard';
+import ShopSubSubCat from '../ShopSubSubCat/ShopSubSubCat';
 import ShopItemDisplay from '../ShopItemDisplay/ShopItemDisplay';
 
 
@@ -19,7 +19,7 @@ const ShopSubCat = ({categoryItems, match}) => {
         <div>
 
             <Route exact path={`${match.path}`} component={ShopItemDisplay} />
-            <Route path={`${match.path}/:category`} component={ShopItemDisplay} />
+            <Route path={`${match.path}/:category`} component={ShopSubSubCat} />
 
         </div>
 
@@ -32,7 +32,7 @@ const ShopSubCat = ({categoryItems, match}) => {
 
 const mapStateToProps = (state, ownProps) => ({
 
-    categoryItems: selectCategory(ownProps.match.params.category)(state)
+    categoryItems: selectCategory(ownProps.match.url)(state)
 })
 
 export default connect(mapStateToProps)(ShopSubCat);

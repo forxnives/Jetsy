@@ -11,6 +11,8 @@ import ShopSubCat from '../ShopSubCat/ShopSubCat';
 
 const ShopCategory = ({categoryItems, match}) => {
 
+    console.log(match.url)
+
 
     return(
 
@@ -30,7 +32,7 @@ const ShopCategory = ({categoryItems, match}) => {
 
 const mapStateToProps = (state, ownProps) => ({
 
-    categoryItems: selectCategory(ownProps.match.params.category)(state)
+    categoryItems: selectCategory(ownProps.match.url)(state)
 })
 
 export default connect(mapStateToProps)(ShopCategory);

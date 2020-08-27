@@ -11,13 +11,15 @@ export const selectPopularItems = createSelector(
 
 )
 
-export const selectCategory = categoryParam => 
+export const selectCategory = url => {
 
-    createSelector(
+    // console.log(url)
+
+    return createSelector(
 
     [selectDirectory],
-    directory => directoryCategory(directory, categoryParam)
+    directory => directoryCategory(directory, url.replace('/shop/', '').split('/'))
 
     )
-
+}
 

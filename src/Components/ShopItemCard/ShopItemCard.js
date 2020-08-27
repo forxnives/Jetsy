@@ -43,7 +43,7 @@ const ShopItemCard = (props) => {
 
                 <div className="shop-item__image">
 
-                    <div className={btnHovered ? 'img img-hover' : 'img'}>
+                    <div className='img'>
                         <img src={img} alt="wooden spoons"/>
 
 

@@ -1,7 +1,16 @@
 
 .shop-header {
-    padding: 30px;
-    text-align: center;
+    padding: 10px 0px;
+    max-width: 1500px;
+    margin: auto;
+    // text-align: center;
+}
+
+.shop-section {
+    // margin: 0px 3vw;
+    max-width: 1500px;
+    margin: auto;
+    // text-align: left;
 }
 
 .shop-items-container {
@@ -13,12 +22,13 @@
 
 .shop-filters-container {
     padding: 100px;
+    border: 2px solid black;
 }
 
 .shop-item {
 
     text-align: left;
-    margin-top: 3rem;
+    // margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,20 +66,16 @@
         img {
 
 
-            // left: 5%;
+
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            // margin: auto;
-            // max-width: 250px;
-            // min-width: 150px;
-            // width: 100%;
-            // max-height: 200px;
+
             max-height:100%;
             max-width:90%;
             object-fit: contain;
-            // height: auto;
+
             width: auto;
 
             z-index: -1;
