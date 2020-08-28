@@ -1,28 +1,147 @@
 
+// .shop-section {
+//     display: flex;
+// }
+
+
 .shop-header {
     padding: 10px 0px;
     max-width: 1500px;
     margin: auto;
+    // display: flex;
     // text-align: center;
+
+    &-lower {
+
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        // vertical-align: bottom;
+
+        h1 {
+            font-size: 3rem;
+
+        }
+
+
+        .sort-dropdown {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border: 1px solid transparent;
+            padding: 0px 20px;
+            transition: all .2s;
+            position: relative;
+
+
+
+
+            &:hover {
+
+                border: 1px solid $color-light-shadow;
+                border-radius: 30px;
+                background-color: $color-cultured;
+
+            }
+
+
+            span {
+                font-size: 1.2rem;
+                font-weight: bold;
+
+
+            }
+
+
+            .dropdown-menu {
+                position: absolute; 
+                border: 1px solid $color-rhythm;
+                padding: 10px 0px;
+
+                // z-index: -1;
+
+                
+                top: -1px;
+                width: 165px;
+                // left: -39px;
+                right: 0px;
+                background-color: white;
+                border-radius: 20px;
+
+                // .sort-top {
+                //     width: 120px;
+                // }
+
+                .sort-top {
+                    margin-top: 2px;
+                    margin-right: 19px;
+                    text-align: right;
+
+                }
+
+                .sort-option {
+                    margin-top: 20px;
+                }
+
+                span:first-child {
+                    padding-left: 34px;
+
+
+                }
+
+
+            }
+        }
+        
+        .bg {
+
+            z-index: -1;
+            // border: none;
+            // background-color: white;
+
+
+        }
+
+        .hidden {
+
+            &:hover{
+                border: 1px solid transparent;
+
+            }
+
+        }
+
+
+    }
+
+
 }
 
 .shop-section {
     // margin: 0px 3vw;
-    max-width: 1500px;
-    margin: auto;
+    max-width: 1600px;
+    // margin: auto;
+    margin: auto auto 50px auto;
+    display: flex;
+    justify-content: start;
+    // display: grid;
+    // grid-template-columns: 1fr auto;
     // text-align: left;
 }
 
 .shop-items-container {
     display: flex;
+    justify-content: start;
     width: 100%;
     flex-wrap: wrap;
-}
+    margin-left: 3vw;
+    }
 
 
 .shop-filters-container {
     padding: 100px;
     border: 2px solid black;
+    margin-left: 50px;;
 }
 
 .shop-item {

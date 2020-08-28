@@ -3,9 +3,12 @@ import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToCart } from '../../redux/cart/cart.actions';
 
+
+
 // import woodspoon from '../../../img/wood_spoons.jpg';
 
 const ShopItemCard = (props) => {
+
 
     const { item, addToCart } = props;
 
