@@ -1,8 +1,7 @@
-import sortActionTypes from './sort.types';
+import { sortActionTypes } from './sort.types';
 
-const setSortType = (sortType) => ({
+export const setSortType = (sortType) => ({
     type: sortActionTypes.SET_SORT_MODE,
     payload: sortType
 })
 
-export default setSortType;

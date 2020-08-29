@@ -16,6 +16,7 @@
         display: flex;
         justify-content: space-between;
         margin-top: 30px;
+        position: relative;
         // vertical-align: bottom;
 
         h1 {
@@ -27,11 +28,18 @@
         .sort-dropdown {
             display: flex;
             align-items: center;
+            justify-content: center;
             cursor: pointer;
             border: 1px solid transparent;
             padding: 0px 20px;
             transition: all .2s;
-            position: relative;
+            position: absolute;
+            top: 0px;
+            left: 85vw;
+            height: 40px;
+            width: 165px;
+
+            // width: 170px;
 
 
 
@@ -48,6 +56,9 @@
             span {
                 font-size: 1.2rem;
                 font-weight: bold;
+                // text-align: center;
+                // position: absolute;
+                // left: 10px;
 
 
             }
@@ -56,7 +67,8 @@
             .dropdown-menu {
                 position: absolute; 
                 border: 1px solid $color-rhythm;
-                padding: 10px 0px;
+
+                z-index: 2;
 
                 // z-index: -1;
 
@@ -67,24 +79,53 @@
                 right: 0px;
                 background-color: white;
                 border-radius: 20px;
+                overflow: hidden;
 
                 // .sort-top {
                 //     width: 120px;
                 // }
 
                 .sort-top {
-                    margin-top: 2px;
-                    margin-right: 19px;
-                    text-align: right;
+                    // margin-top: 2px;
+                    // margin-right: 19px;
+                    // text-align: right;
+                    height: 38px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    span {
+                        margin-left: 2px;
+                    }
+
+                    // position: absolute;
 
                 }
 
                 .sort-option {
-                    margin-top: 20px;
+                    // margin-top: 20px;
+                    position: relative;
+                    height: 40px;
+                    padding: 12px 0px;
+
+                    span {
+                        margin-left: 15px;
+                    }
+
+
+                    &:hover {
+                        background-color: $color-cultured;
+    
+                    }
+
+                    .checkmark {
+                        position: absolute;
+                        right: 20px;
+                    }
                 }
 
                 span:first-child {
-                    padding-left: 34px;
+                    // padding-left: 34px;
 
 
                 }

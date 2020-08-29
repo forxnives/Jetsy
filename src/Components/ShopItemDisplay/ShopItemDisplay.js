@@ -17,8 +17,23 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
 
     const [ sortHidden, toggleSortHidden ] = useState(true);
 
-    console.log(sortMode)
 
+
+    const SORT_MAP = {
+        'Highest Price': (a, b) => b.price - a.price,
+        'Lowest Price': (a, b) => a.price - b.price,
+        'Relevance': (a, b) =>  0
+      };
+      
+
+
+    const itemSort = (categoryItems, sortMode) => {
+
+        return categoryItems.sort(SORT_MAP[sortMode.sortType])
+
+    }
+
+    itemSort(categoryItems, sortMode)
     
 
     const popularList = categoryItems.map( item => (
@@ -104,7 +119,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
 
 
                         }>
-                            <span>Sort By: {'Relevance'} </span>
+                            <span>Sort By: {sortMode.sortType} </span>
                             
                             
                             {
@@ -120,7 +135,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
                                 null :
                                 <div className="dropdown-menu">
 
-                                    <div className='sort-top'><span>Sort By: {'Relevance'}</span></div>
+                                    <div className='sort-top'><span>Sort By: {sortMode.sortType}</span></div>
 
                                     <SortOption sortType={'Relevance'} />
                                     <SortOption sortType={'Highest Price'} />

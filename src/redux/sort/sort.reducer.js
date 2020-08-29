@@ -1,6 +1,6 @@
 import { sortActionTypes } from './sort.types';
 
-const INITIAL_STATE = {sortType:'relevance'}
+const INITIAL_STATE = {sortType:'Relevance'}
 
 const sortReducer = (state = INITIAL_STATE, action) => {
     switch (action.type){
