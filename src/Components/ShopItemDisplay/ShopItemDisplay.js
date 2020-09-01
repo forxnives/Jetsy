@@ -5,10 +5,12 @@ import { selectCategory } from '../../redux/directory/directory.selectors';
 import { selectSortMode } from '../../redux/sort/sort.selectors';
 import ShopItemCard from '../ShopItemCard/ShopItemCard';
 import SortOption from './SortOption/SortOption';
+import ShopFilters from './ShopFilters/ShopFilters';
 
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import { Link } from 'react-router-dom';
+import { capitalize, shopStringFormat, urlToCatArray } from '../../generalutils';
 
 
 
@@ -45,7 +47,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
     
     const categoryPathParse = (url) => {
 
-        const parsedCategoryArray = url.replace('/shop/', '').split('/')
+        const parsedCategoryArray = urlToCatArray(url)
 
         const linkPathReduced = parsedCategoryArray.reduce((accumulator, category)=>{
             if (accumulator.length > 0) {
@@ -61,37 +63,27 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
 
 
         
-        const formattedCategoryArray = parsedCategoryArray.map(category => {
+        const formattedCategoryArray = parsedCategoryArray.map(category => (
+
+
+            shopStringFormat(category)
 
 
 
-            if (category.includes('&')){
-                
-                return category.replace('&', ' & ')
-
-            }
-
-            if (category.includes('_')){
-                return category.replace('_', ' ')
-            }
-
-
-            return category
-
-
-        })
-
-        return formattedCategoryArray.map((category, i)=> (
-            <Link to={`/shop/${linkPathReduced[i]}`}> <span className='category-path-txt'>{formattedCategoryArray[i] + ' >'}</span> </Link>
         ))
 
-        // for (let i in formattedCategoryArray){
+        return formattedCategoryArray.map((category, i)=> (
+            <Link to={`/shop/${linkPathReduced[i]}`}> <span className='category-path-txt'>{capitalize(formattedCategoryArray[i] + ' >')}</span> </Link>
+        ))
 
-        //     return <Link to={`/shop/${linkPathReduced[i]}`}> <span>{formattedCategoryArray[i]}</span> </Link>
 
-        // }
 
     }
+
+    const shopCategoryTitle = category => (
+
+        capitalize(shopStringFormat(category))
+    )
 
 
 
@@ -104,7 +96,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
                     {categoryPathParse(match.url)}
 
                     <div className="shop-header-lower">
-                        <h1>{match.params.category.charAt(0).toUpperCase() + match.params.category.slice(1)}</h1>
+                        <h1>{shopCategoryTitle(match.params.category)}</h1>
                         <div onClick={() => toggleSortHidden(!sortHidden)} className={
 
                             cartHidden ?
@@ -116,20 +108,10 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
                                 :
                                 'sort-dropdown bg'
 
-
-
                         }>
                             <span>Sort By: {sortMode.sortType} </span>
                             
-                            
                             {
-                                
-
-
-
-                                
-                                
-                                
                                 
                                 sortHidden ? 
                                 null :
@@ -141,19 +123,14 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
                                     <SortOption sortType={'Highest Price'} />
                                     <SortOption sortType={'Lowest Price'} />
 
-
-
                                 </div>
 
                             }
                             
                                                         
-                            
                         </div>
                     </div>
 
-
-        
                 </div>
         
                 {/* <div className='shop-section'> */}
@@ -161,14 +138,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
         
                     <div className='shop-section'>
         
-                        <div className="shop-filters-container">
-        
-        
-                        <div><h1>thing</h1></div>
-                        </div>
-        
-        
-        
+                        <ShopFilters catArray={urlToCatArray(match.url)} />
         
                         <div className='shop-items-container'>
         
@@ -181,8 +151,6 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
                 {/* </div> */}
 
         </section>
-
-
 
 
     )

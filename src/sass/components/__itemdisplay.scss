@@ -21,6 +21,7 @@
 
         h1 {
             font-size: 3rem;
+            
 
         }
 
@@ -35,7 +36,7 @@
             transition: all .2s;
             position: absolute;
             top: 0px;
-            left: 85vw;
+            right: 5px;
             height: 40px;
             width: 165px;
 
@@ -160,7 +161,7 @@
 
 .shop-section {
     // margin: 0px 3vw;
-    max-width: 1600px;
+    max-width: 1300px;
     // margin: auto;
     margin: auto auto 50px auto;
     display: flex;
@@ -180,9 +181,14 @@
 
 
 .shop-filters-container {
-    padding: 100px;
+    // padding: 100px;
+    width: 300px;
     border: 2px solid black;
-    margin-left: 50px;;
+
+
+    .category-link {
+        font-size: 3rem;
+    }
 }
 
 .shop-item {

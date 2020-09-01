@@ -1,5 +1,6 @@
 import React from 'react';
-
+import DropdownListItem  from './DropdownListItem/DropdownListItem';
+import {Link} from 'react-router-dom';
 
 
 const Dropdown = () => {
@@ -10,78 +11,79 @@ const Dropdown = () => {
             {/* <div className="spacer">&nbsp;</div> */}
             <ul className="dlist">
 
-                <li><a href="!#">Arts & Crafts</a>
+                <li><Link to="/shop/arts&crafts">Arts & Crafts</Link>
                     <ul>
 
-                    <li><a href="!#">Jewellery</a>
+                    <li><Link to="/shop/arts&crafts/jewellery">Jewellery</Link>
 
                         <ul>
                                     
-                            <li><a href="!#">Bracelets</a></li>
-                            <li><a href="!#">Necklaces</a></li>
-                            <li><a href="!#">Earrings</a></li>
+                            <DropdownListItem itemPath='/shop/arts&crafts/jewellery/bracelets' itemName='Bracelets' />
+                            <DropdownListItem itemPath='/shop/arts&crafts/jewellery/necklaces' itemName='Necklaces' />
+                            <li><Link to='/shop/arts&crafts/jewellery/necklaces'>Necklaces</Link></li>
+                            <li><Link to="/shop/arts&crafts/jewellery/earrings">Earrings</Link></li>
 
                         </ul>
                     
                     
                     </li>
-                    <li><a href="!#">Paintings</a></li>
-                    <li><a href="!#">Sculptures</a></li>
+                    <li><Link to="/shop/arts&crafts/paintings">Paintings</Link></li>
+                    <li><Link to="/shop/arts&crafts/sculptures">Sculptures</Link></li>
 
 
 
                     
 
-                    <li><a href="!#">Knick Knacks</a></li>
+                    <li><Link to="/shop/arts&crafts/knick_knacks">Knick Knacks</Link></li>
                     </ul>
                 </li>
 
-                <li><a href="!#">Clothing & Apparel</a>
+                <li><Link to="/shop/clothing&apparel">Clothing & Apparel</Link>
                     <ul>
                     
-                    <li><a href="!#">For Men</a>
+                    <li><Link to="/shop/clothing&apparel/men">For Men</Link>
                         <ul>
-                            <li><a href="!#">Shirts</a></li>
-                            <li><a href="!#">Sweaters</a></li>
-                            <li><a href="!#">Shoes</a>
+                            <li><Link to="/shop/clothing&apparel/men/shirts">Shirts</Link></li>
+                            <li><Link to="/shop/clothing&apparel/men/sweaters">Sweaters</Link></li>
+                            <li><Link to="/shop/clothing&apparel/men/shoes">Shoes</Link>
                         
                                 <ul>
-                                    <li><a href="!#">Sandals</a></li>
-                                    <li><a href="!#">Sneakers</a></li>
+                                    <li><Link to="/shop/clothing&apparel/men/shoes/sandals">Sandals</Link></li>
+                                    <li><Link to="/shop/clothing&apparel/men/shoes/sneakers">Sneakers</Link></li>
 
                                 </ul>
 
                             </li>
-                            <li><a href="!#">Underwear/Swimwear</a></li>
+                            <li><Link to="/shop/clothing&apparel/men/underwear&swimwear">Underwear & Swimwear</Link></li>
                         </ul>
                     </li>
 
                     
-                    <li><a href="!#">For Women</a>
+                    <li><Link to="/shop/clothing&apparel/women">For Women</Link>
                         <ul>
-                        <li><a href="!#">Shirts</a></li>
-                        <li><a href="!#">Sweaters</a></li>
-                        <li><a href="!#">Shoes</a>
+                        <li><Link to="/shop/clothing&apparel/women/shirts">Shirts</Link></li>
+                        <li><Link to="/shop/clothing&apparel/women/sweaters">Sweaters</Link></li>
+                        <li><Link to="/shop/clothing&apparel/women/shoes">Shoes</Link>
                         
                             <ul>
-                            <li><a href="!#">Sandals</a></li>
-                            <li><a href="!#">Sneakers</a></li>
+                            <li><Link to="/shop/clothing&apparel/women/shoes/sandals">Sandals</Link></li>
+                            <li><Link to="/shop/clothing&apparel/women/shoes/sneakers">Sneakers</Link></li>
 
                             </ul>
 
                         </li>
-                        <li><a href="!#">Underwear/Swimwear</a></li>
+                        <li><Link to="/shop/clothing&apparel/women/underwear&swimwear">Underwear & Swimwear</Link></li>
                         </ul>
                         
                     </li>
-                    <li><a href="!#">Hats & Scarfs</a></li>
-                    <li><a href="!#">Accessories</a>
+                    <li><Link to="/shop/clothing&apparel/hats&scarfs">Hats & Scarfs</Link></li>
+                    <li><Link to="/shop/clothing&apparel/accessories">Accessories</Link>
                     
                                         
                         <ul>
-                            <li><a href="!#">Masks</a></li>
-                            <li><a href="!#">Sunglasses</a></li>
-                            <li><a href="!#">Bags and Knapsacks</a></li>
+                            <li><Link to="/shop/clothing&apparel/accessories/masks">Masks</Link></li>
+                            <li><Link to="/shop/clothing&apparel/accessories/sunglasses">Sunglasses</Link></li>
+                            <li><Link to="/shop/clothing&apparel/accessories/bags&knapsacks">Bags & Knapsacks</Link></li>
 
                         </ul>
 
@@ -89,13 +91,13 @@ const Dropdown = () => {
                     </ul>
                 </li>
 
-                <li><a href="!#">Books and Entertainment</a>
+                <li><Link to="/shop/books&entertainment">Books and Entertainment</Link>
                     <ul>
-                    <li><a href="!#">Books</a>
+                    <li><Link to="/shop/books&entertainment/books">Books</Link>
                     
                         <ul>
-                            <li><a href="!#">Fiction</a></li>
-                            <li><a href="!#">Non-fiction</a></li>
+                            <li><Link to="/shop/books&entertainment/books/fiction">Fiction</Link></li>
+                            <li><Link to="/shop/books&entertainment/books/non-fiction">Non-fiction</Link></li>
 
                         </ul>
                     
@@ -104,23 +106,23 @@ const Dropdown = () => {
 
 
 
-                    <li><a href="!#">Movies</a>
+                    <li><Link to="/shop/books&entertainment/movies">Movies</Link>
                     
                         <ul>
-                            <li><a href="!#">Fiction</a></li>
-                            <li><a href="!#">Non-fiction</a></li>
+                            <li><Link to="/shop/books&entertainment/movies/fiction">Fiction</Link></li>
+                            <li><Link to="/shop/books&entertainment/movies/non-fiction">Non-fiction</Link></li>
 
                         </ul>
 
                     </li>
 
 
-                    <li><a href="!#">Music</a>
+                    <li><Link to="/shop/books&entertainment/music">Music</Link>
                     
                         <ul>
-                            <li><a href="!#">Reggae</a></li>
-                            <li><a href="!#">Dancehall</a></li>
-                            <li><a href="!#">Ska</a></li>
+                            <li><Link to="/shop/books&entertainment/music/reggae">Reggae</Link></li>
+                            <li><Link to="/shop/books&entertainment/music/dancehall">Dancehall</Link></li>
+                            <li><Link to="/shop/books&entertainment/music/ska">Ska</Link></li>
 
                         </ul>
                     
@@ -129,40 +131,40 @@ const Dropdown = () => {
                     </ul>
                 </li>
 
-                <li><a href="!#">Food & Drink</a>
+                <li><Link to="/shop/food&drink">Food & Drink</Link>
                     <ul>
-                    <li><a href="!#">Sauces & Seasoning</a></li>
-                    <li><a href="!#">Coffee</a></li>
-                    <li><a href="!#">Chocolates</a></li>
-                    <li><a href="!#">Herbal Supplements</a></li>
+                    <li><Link to="/shop/food&drink/sauces&seasoning">Sauces & Seasoning</Link></li>
+                    <li><Link to="/shop/food&drink/coffee">Coffee</Link></li>
+                    <li><Link to="/shop/food&drink/chocolates">Chocolates</Link></li>
+                    <li><Link to="/shop/food&drink/herbal_supplements">Herbal Supplements</Link></li>
                     </ul>
                 </li>
 
-                <li className="dlist-cat"><a href="!#">Miscellaneous</a>
+                <li className="dlist-cat"><Link to="/shop/miscellaneous">Miscellaneous</Link>
                     <ul>
-                    <li><a href="!#">Home</a>
+                    <li><Link to="/shop/miscellaneous/home">Home</Link>
                                         
                         <ul>
-                            <li><a href="!#">Bedroom</a></li>
-                            <li><a href="!#">Bathroom</a></li>
-                            <li><a href="!#">Living Room</a></li>
-                            <li><a href="!#">Kitchen</a></li>
+                            <li><Link to="/shop/miscellaneous/home/bedroom">Bedroom</Link></li>
+                            <li><Link to="/shop/miscellaneous/home/bathroom">Bathroom</Link></li>
+                            <li><Link to="/shop/miscellaneous/home/livingroom">Living Room</Link></li>
+                            <li><Link to="/shop/miscellaneous/home/kitchen">Kitchen</Link></li>
 
                         </ul>
                     
                     
                     </li>
-                    <li><a href="!#">Hair</a>
+                    <li><Link to="/shop/miscellaneous/hair">Hair</Link>
                                         
                         <ul>
-                            <li><a href="!#">Haircare Products</a></li>
-                            <li><a href="!#">Extensions</a></li>
+                            <li><Link to="/shop/miscellaneous/hair/haircare_products">Haircare Products</Link></li>
+                            <li><Link to="/shop/miscellaneous/hair/extensions">Extensions</Link></li>
 
                         </ul>
                     
                     </li>
-                    <li><a href="!#">Flags</a></li>
-                    <li><a href="!#">Other</a></li>
+                    <li><Link to="/shop/miscellaneous/flags">Flags</Link></li>
+                    <li><Link to="/shop/miscellaneous/other">Other</Link></li>
                     </ul>
                 </li>
 
