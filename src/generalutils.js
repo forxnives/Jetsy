@@ -5,19 +5,20 @@ export const capitalize = word => (
 
 export const shopStringFormat = string => {
     if (string.includes('&')){
-            
         return string.replace('&', ' & ')
-
     }
 
     if (string.includes('_')){
         return string.replace('_', ' ')
     }
 
-
     return string
 } 
+
 
 export const urlToCatArray = (url) => (
     url.replace('/shop/', '').split('/')
 )
+
+
+

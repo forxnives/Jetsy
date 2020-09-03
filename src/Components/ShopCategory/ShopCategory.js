@@ -11,7 +11,6 @@ import ShopSubCat from '../ShopSubCat/ShopSubCat';
 
 const ShopCategory = ({categoryItems, match}) => {
 
-    console.log(match.url)
 
 
     return(

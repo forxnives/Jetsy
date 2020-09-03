@@ -10,6 +10,8 @@ import ShopFilters from './ShopFilters/ShopFilters';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import { Link } from 'react-router-dom';
+
+import { productFilter } from './ShopFilters/filterutils';
 import { capitalize, shopStringFormat, urlToCatArray } from '../../generalutils';
 
 
@@ -36,13 +38,61 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
     }
 
     itemSort(categoryItems, sortMode)
-    
 
-    const popularList = categoryItems.map( item => (
+    // const filterArray = [
+    //     {price: [0, 25]}
+    // ]
+
+    const filterArray = [
+
+        {
+            filter: 'price',
+            params:[0, 100]
+        },
+
+        {
+            filter: 'rating',
+            params: [4]
+        },
+
+        {
+            filter: 'option',
+            params: 'ready-to-ship'
+        }
+
+    ]
+    
+    const categoryItemsFiltered = productFilter(categoryItems, filterArray)
+
+
+    const popularList = categoryItemsFiltered.map( item => (
 
         <ShopItemCard item={item} />
     
     ))
+
+    const subCatArray = (categoryItems, category) => (
+
+        categoryItems.reduce((accumulator, item) => {
+            if (item.categories.includes(category)){
+
+                let cat = item.categories[item.categories.indexOf(category) + 1] 
+
+                if (cat){
+                    if (!accumulator.includes(cat)){
+                        accumulator.push(cat)
+                    }
+                }
+
+                return accumulator
+            }return accumulator
+        }, [])
+
+
+    )
+
+    // const thang = subCatArray(categoryItems, match.params.category)
+    // console.log(thang)
 
     
     const categoryPathParse = (url) => {
@@ -84,6 +134,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
 
         capitalize(shopStringFormat(category))
     )
+
 
 
 
@@ -138,7 +189,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
         
                     <div className='shop-section'>
         
-                        <ShopFilters catArray={urlToCatArray(match.url)} />
+                        <ShopFilters catArray={urlToCatArray(match.url)} subCatArray={subCatArray(categoryItems, match.params.category)} />
         
                         <div className='shop-items-container'>
         

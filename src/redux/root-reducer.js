@@ -6,6 +6,7 @@ import userReducer from './user/user.reducer';
 import cartReducer from './cart/cart.reducer.jsx';
 import directoryReducer from './directory/directory.reducer';
 import sortModeReducer from './sort/sort.reducer';
+// import filtersReducer from './filter/filters.reducer';
 
 
 const persistConfig = {
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
     cart: cartReducer,
     directory: directoryReducer,
     sortMode: sortModeReducer
+    // filters: filtersReducer
 });
 
 

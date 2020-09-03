@@ -5,22 +5,27 @@
 
 
 .shop-header {
-    padding: 10px 0px;
-    max-width: 1500px;
+    padding: 10px 0px 0px;
+    max-width: 1300px;
     margin: auto;
     // display: flex;
     // text-align: center;
+
+    // a:first-child {
+    //     margin-left: 100px;
+    // }
 
     &-lower {
 
         display: flex;
         justify-content: space-between;
-        margin-top: 30px;
+        margin-top: 15px;
         position: relative;
         // vertical-align: bottom;
 
         h1 {
             font-size: 3rem;
+            margin-left: 20px;
             
 
         }
@@ -176,19 +181,170 @@
     justify-content: start;
     width: 100%;
     flex-wrap: wrap;
-    margin-left: 3vw;
+    margin-left: 1.5vw;
     }
 
 
 .shop-filters-container {
+
+    padding: 40px 0 0 50px;
     // padding: 100px;
-    width: 300px;
-    border: 2px solid black;
+    min-width: 200px;
+    // border: 2px solid black;
 
 
-    .category-link {
-        font-size: 3rem;
+    .category-links {
+
+        margin-bottom: 20px;
+
+        .all-categories-link {
+
+            font-size: 1.4rem;
+    
+            a{
+                text-decoration: none;
+    
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .category-link {
+            font-size: 1.4rem;
+    
+            a{
+                text-decoration: none;
+    
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+    
+    
+            &:last-child {
+
+                font-weight: bold;
+                span {
+                    visibility: hidden;
+    
+                }
+            }
+        }
     }
+
+
+    .sub-category-links {
+
+        margin: 25px 0;
+
+        .sub-category-link {
+            font-size: 1.4rem;
+    
+            a{
+                text-decoration: none;
+    
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+    
+
+        }
+    }
+
+
+
+
+    .filter-options {
+
+
+        .ready-to-ship {
+
+            margin: 5px 0px 20px 0px;
+    
+            label {
+                font-size: 1.4rem;
+                margin-left: 5px;
+                
+            }
+    
+        }
+
+    }
+
+    .filter-rating{
+
+        margin-bottom: 20px;
+
+        &-radios {
+
+
+
+            margin-top: 5px;
+        }
+
+        .rating {
+            // position: relative;
+
+            display: inline-block;
+            // top: 20px;
+            // float: left;
+            margin: 0 0 0 5px;
+            padding: 0;
+
+
+            ul {
+
+            }
+
+            li {
+                float: left;
+                display: block;
+                height: 16px;
+                width: 16px;
+                margin-left: 5px;
+                background: url("https://designmodo.com/demo/ecommerce-css3/img/stars.png") no-repeat 0 0;
+
+            }
+
+            li:first-child {
+                margin-left: 0;
+            }
+
+            li.rated {
+                background-position: 0px -16px;
+            }
+        }
+
+    }
+
+    .filter-price {
+
+
+        .filter-price-radios {
+
+            font-size: 1.3rem;
+
+            margin-top: 5px;
+
+
+            .custom-input-field {
+                margin: 3px 0 0px 15px;
+
+                span {
+                    margin: 0 5px;
+                }
+            }
+        }
+
+    }
+
+    
+
+
+
+
 }
 
 .shop-item {
@@ -200,7 +356,7 @@
     align-items: center;
     background-size: cover;
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     // width: 200px;
     width: 250px;
     height: 260px;

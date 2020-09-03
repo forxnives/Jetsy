@@ -160,7 +160,7 @@ const ProductJSON =
       "cartquantity": 0,
       "giftcat": "",
       "instock": 65,
-      "categories": ['men', 'women', 'clothing&apparel', 'shoes', 'sandals'],
+      "categories": ['clothing&apparel', 'men', 'women', 'shoes', 'sandals'],
       "keywords": "",
       "extra": "",
       "personalize": "",
