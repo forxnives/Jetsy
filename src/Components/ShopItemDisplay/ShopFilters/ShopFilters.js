@@ -1,10 +1,77 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { capitalize, shopStringFormat } from '../../../generalutils';
 import { Link } from 'react-router-dom';
+import { updateFilters } from '../../../redux/filters/filters.actions';
+import { connect } from 'react-redux';
+
+
+const ShopFilters = ({catArray, subCatArray, setFilterArray}) => {
+
+    const [optionFilter, setOptionFilter] = useState(null);
+    const [priceFilter, setPriceFilter] = useState(null);
+    const [ratingFilter, setRatingFilter] = useState(null);
+
+    const [readyToShipChecked, toggleReadyToShip] = useState(false);
+    const [priceFilterMode, setPriceFilterMode] = useState();
+    const [customPrice, setCustomPrice] = useState({price1: '0', price2: '99999999999999'})
+
+    useEffect(() => {
+        let array = []
+
+
+        if (priceFilter) {
+            array.push(priceFilter)
+        }
+
+        if (optionFilter) {
+
+
+            array.push(optionFilter)
+        }
+
+        if (ratingFilter) {
+            array.push(ratingFilter)
+        }
+
+        setFilterArray(array)
+    }, [priceFilter, ratingFilter, optionFilter]);
 
 
 
-const ShopFilters = ({catArray, subCatArray}) => {
+    useEffect(()=>{
+        if (readyToShipChecked){
+            setOptionFilter({filter: 'option', params: 'ready-to-ship'})
+            return
+        } 
+
+        setOptionFilter(null)
+    }, [readyToShipChecked]);
+
+
+    useEffect(()=> {
+
+        if (priceFilterMode === 'custom') {
+            setPriceFilter({filter: 'price', params: [customPrice.price1, customPrice.price2]})
+        }
+
+
+
+    }, [customPrice])
+
+
+    useEffect(()=> {
+        if (priceFilterMode) {
+
+            setPriceFilter({filter: 'price', params: PARAMS_MAP[priceFilterMode]})
+
+        }
+
+    },[priceFilterMode])
+
+
+
+
+
 
 
     const categoryLinks = catArray => {
@@ -20,7 +87,6 @@ const ShopFilters = ({catArray, subCatArray}) => {
     }
 
 
-
     const subCategoryLinks = (subCatArray, catArray) => {
 
         return subCatArray.map(category => {
@@ -30,14 +96,52 @@ const ShopFilters = ({catArray, subCatArray}) => {
 
     }
 
+    const PARAMS_MAP = {
+        'anyprice':[0, 9999999999999999],
+        'under25':[0, 25],
+        '25to50':[25, 50],
+        '50to100':[50, 100],
+        'over100':[100, 999999999999999],
+        'custom':[customPrice.price1, customPrice.price2]
 
-    
+    }
+
+
+
+    const ratingCallback = (event) => {
+
+
+        setRatingFilter({filter: 'rating', params: event.target.value})
+
+    }
+
+    const handlePriceFilter = (event) => {
+
+      
+
+        if (event.target.id !== 'price1' && event.target.id !== 'price2'){
+
+            setPriceFilterMode(event.target.value)
+        }
+
+
+        if (event.target.id=== 'price1'){
+            setCustomPrice({...customPrice, price1: event.target.value})
+        }
+
+        if (event.target.id=== 'price2'){
+            setCustomPrice({...customPrice, price2: event.target.value})
+        }
+
+    }
 
 
 
     return (
 
         <div className="shop-filters-container">
+
+
 
             <div className="category-links">
 
@@ -46,9 +150,7 @@ const ShopFilters = ({catArray, subCatArray}) => {
                     {
 
                         catArray.length > 1 ?
-
                         categoryLinks(catArray) :
-
                         null
 
                     }
@@ -56,12 +158,13 @@ const ShopFilters = ({catArray, subCatArray}) => {
             </div>
 
 
-
-            <div className="filter-options">
+            <div className="filter-options"  >
 
                 <h2>Options</h2>
 
-                <div className='ready-to-ship'><input id='readytoship' type='checkbox'></input> <label for='readytoship' >Ready-to-ship</label></div>
+
+
+                <div className='ready-to-ship'><input onChange={() => toggleReadyToShip(!readyToShipChecked)} id='ready-to-ship' type='checkbox'></input> <label for='ready-to-ship' >Ready-to-ship</label></div>
 
             </div>
 
@@ -69,10 +172,10 @@ const ShopFilters = ({catArray, subCatArray}) => {
 
                 <h2>Rating</h2>
 
-                <div className="filter-rating-radios">
+                <div onChange={event => ratingCallback(event)} className="filter-rating-radios">
 
                     <div>
-                        <input type="radio" id="onestar" name="rating" value="one"
+                        <input type="radio" id="onestar" name="rating" value="1"
                             />
                         <label for="onestar">
 
@@ -85,7 +188,7 @@ const ShopFilters = ({catArray, subCatArray}) => {
                     </div>
 
                     <div>
-                        <input type="radio" id="twostar" name="rating" value="two"/>
+                        <input type="radio" id="twostar" name="rating" value="2"/>
                         <label for="twostar">
 
                             <ul className="rating">
@@ -97,7 +200,7 @@ const ShopFilters = ({catArray, subCatArray}) => {
                     </div>
 
                     <div>
-                        <input type="radio" id="threestar" name="rating" value="three"/>
+                        <input type="radio" id="threestar" name="rating" value="3"/>
                         <label for="threestar">
                             <ul className="rating">
                                 <li className="rated"></li>
@@ -109,7 +212,7 @@ const ShopFilters = ({catArray, subCatArray}) => {
 
 
                     <div>
-                        <input type="radio" id="fourstar" name="rating" value="four"/>
+                        <input type="radio" id="fourstar" name="rating" value="4"/>
                         <label for="fourstar">
 
                             <ul className="rating">
@@ -124,7 +227,7 @@ const ShopFilters = ({catArray, subCatArray}) => {
 
 
                     <div>
-                        <input type="radio" id="fivestar" name="rating" value="five"/>
+                        <input type="radio" id="fivestar" name="rating" value="5"/>
                         <label for="fivestar">
 
                             <ul className="rating">
@@ -150,61 +253,55 @@ const ShopFilters = ({catArray, subCatArray}) => {
                 <div className="filter-price-radios">
 
 
-                    <div>
+                    <div onChange={event=>handlePriceFilter(event)} >
                         <input type="radio" id="pricetier1" name="price" value="anyprice"
                             />
                         <label for="pricetier1"> Any Price </label>
 
                     </div>
 
-                    <div>
+                    <div onChange={event=>handlePriceFilter(event)} >
                         <input type="radio" id="pricetier2" name="price" value="under25"
                             />
                         <label for="pricetier2"> Under USD 25  </label>
 
                     </div>
 
-                    <div>
+                    <div onChange={event=>handlePriceFilter(event)} >
                         <input type="radio" id="pricetier3" name="price" value="25to50"
                             />
                         <label for="pricetier3"> USD 25 to USD 50 </label>
 
                     </div>
 
-                    <div>
+                    <div onChange={event=>handlePriceFilter(event)} >
                         <input type="radio" id="pricetier4" name="price" value="50to100"
                             />
                         <label for="pricetier4"> USD 50 to USD 100 </label>
 
                     </div>
 
-                    <div>
+                    <div onChange={event=>handlePriceFilter(event)} >
                         <input type="radio" id="pricetier5" name="price" value="over100"
                             />
                         <label for="pricetier5"> Over USD 100 </label>
 
                     </div>
 
-
-                    <div>
-                        <input type="radio" id="pricetier6" name="price" value="custom"
+                    <div >
+                        <input onChange={event=>handlePriceFilter(event)} type="radio" id="custom" name="price" value="custom"
                             />
-                        <label for="pricetier6"> Custom (USD)
+                        <label for="custom"> Custom (USD)
                         
                             <div className="custom-input-field">
-                                <input type="text" size="1" />
+                                <input onChange={event=> handlePriceFilter(event)} id='price1' type="text" size="1" />
 
                                 <span>to</span>
-                                <input type="text" size="1"/>
+                                <input onChange={event=> handlePriceFilter(event)} id='price2' type="text" size="1"/>
 
 
                             </div>
-
-{/* 
-                            <div className="custom-input-field">
-
-                            </div> */}
-                        
+                       
                         
                         </label>
 
@@ -215,6 +312,7 @@ const ShopFilters = ({catArray, subCatArray}) => {
 
 
 
+
             </div>
 
             <div className="sub-category-links">
@@ -222,15 +320,11 @@ const ShopFilters = ({catArray, subCatArray}) => {
                 {/* <h2>Sub-Categories</h2> */}
 
                 {
-
                     subCatArray.length > 1 ? 
-
                     subCategoryLinks(subCatArray, catArray) :
-
                     null
 
                 }
-
 
             </div>
 
@@ -238,4 +332,9 @@ const ShopFilters = ({catArray, subCatArray}) => {
     )
 }
 
-export default ShopFilters;
+
+const mapDispatchToProps = dispatch => ({
+    setFilterArray: filterArray => dispatch(updateFilters(filterArray))
+})
+
+export default connect(null, mapDispatchToProps)(ShopFilters);

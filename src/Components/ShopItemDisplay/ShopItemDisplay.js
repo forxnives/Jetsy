@@ -3,10 +3,13 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { selectCategory } from '../../redux/directory/directory.selectors';
 import { selectSortMode } from '../../redux/sort/sort.selectors';
+import { selectFilters } from '../../redux/filters/filters.selectors';
 import ShopItemCard from '../ShopItemCard/ShopItemCard';
 import SortOption from './SortOption/SortOption';
 import ShopFilters from './ShopFilters/ShopFilters';
 
+
+import { createStructuredSelector } from 'reselect';
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import { Link } from 'react-router-dom';
@@ -17,11 +20,11 @@ import { capitalize, shopStringFormat, urlToCatArray } from '../../generalutils'
 
 
 
-const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
+const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) => {
 
     const [ sortHidden, toggleSortHidden ] = useState(true);
 
-
+    console.log(filters)
 
     const SORT_MAP = {
         'Highest Price': (a, b) => b.price - a.price,
@@ -43,26 +46,11 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
     //     {price: [0, 25]}
     // ]
 
-    const filterArray = [
 
-        {
-            filter: 'price',
-            params:[0, 100]
-        },
-
-        {
-            filter: 'rating',
-            params: [4]
-        },
-
-        {
-            filter: 'option',
-            params: 'ready-to-ship'
-        }
-
-    ]
     
-    const categoryItemsFiltered = productFilter(categoryItems, filterArray)
+    const categoryItemsFiltered = productFilter(categoryItems, filters.filters)
+
+    // console.log(filters.filters)
 
 
     const popularList = categoryItemsFiltered.map( item => (
@@ -143,6 +131,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode}) => {
 
         <section>
                 <div className="shop-header">   
+
                 
                     {categoryPathParse(match.url)}
 
@@ -213,7 +202,9 @@ const mapStateToProps = (state, ownProps) => ({
 
     categoryItems: selectCategory(ownProps.match.url)(state),
     cartHidden: selectCartHidden(state),
-    sortMode: selectSortMode(state)
+    sortMode: selectSortMode(state),
+    filters: selectFilters(state),
+
 })
 
 export default connect(mapStateToProps)(ShopItemDisplay);
