@@ -15,7 +15,7 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { Link } from 'react-router-dom';
 
 import { productFilter } from './ShopFilters/filterutils';
-import { capitalize, shopStringFormat, urlToCatArray } from '../../generalutils';
+import { capitalize, shopStringFormat, urlToCatArray, categoryPathParse } from '../../generalutils';
 
 
 
@@ -83,40 +83,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
     // console.log(thang)
 
     
-    const categoryPathParse = (url) => {
 
-        const parsedCategoryArray = urlToCatArray(url)
-
-        const linkPathReduced = parsedCategoryArray.reduce((accumulator, category)=>{
-            if (accumulator.length > 0) {
-                
-                accumulator.push(accumulator[accumulator.length-1] + '/' + category)
-                
-            }else {
-                accumulator.push(category)
-            }
-
-            return accumulator
-        }, [])
-
-
-        
-        const formattedCategoryArray = parsedCategoryArray.map(category => (
-
-
-            shopStringFormat(category)
-
-
-
-        ))
-
-        return formattedCategoryArray.map((category, i)=> (
-            <Link to={`/shop/${linkPathReduced[i]}`}> <span className='category-path-txt'>{capitalize(formattedCategoryArray[i] + ' >')}</span> </Link>
-        ))
-
-
-
-    }
 
     const shopCategoryTitle = category => (
 
@@ -133,7 +100,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
                 <div className="shop-header">   
 
                 
-                    {categoryPathParse(match.url)}
+                    {categoryPathParse(match.url, 'shop')}
 
                     <div className="shop-header-lower">
                         <h1>{shopCategoryTitle(match.params.category)}</h1>
@@ -178,7 +145,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
         
                     <div className='shop-section'>
         
-                        <ShopFilters catArray={urlToCatArray(match.url)} subCatArray={subCatArray(categoryItems, match.params.category)} />
+                        <ShopFilters catArray={urlToCatArray(match.url, 'shop')} subCatArray={subCatArray(categoryItems, match.params.category)} />
         
                         <div className='shop-items-container'>
         
@@ -199,11 +166,14 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
 
 
 const mapStateToProps = (state, ownProps) => ({
+        
 
     categoryItems: selectCategory(ownProps.match.url)(state),
     cartHidden: selectCartHidden(state),
     sortMode: selectSortMode(state),
     filters: selectFilters(state),
+
+
 
 })
 

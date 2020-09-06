@@ -9,9 +9,10 @@ import { selectCurrentUser } from './redux/user/user.selectors';
 
 import HomePage from './Pages/Homepage';
 import Shop from './Pages/Shop';
+
 import ProductPage from './Pages/ProductPage';
 import SignInSignUp from './Pages/SignIn-SignUp';
-import CartPage from './Pages/CartPage';
+import CartPage from './Pages/CartPage';  
 import CheckoutPage from './Pages/CheckoutPage';
 
 import Nav from './Components/Nav/Nav';
@@ -91,9 +92,10 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route exact path='/cartitems' component={CartPage} />
+          {/* <Route path='/item/' component={Item} /> */}
 
           <Route path='/shop' component={Shop} />
-          <Route exact path='/product/:itemId' component={ProductPage} />
+          <Route path='/product/:itemId' component={ProductPage} />
           <Route exact path='/signin' render={() => this.props.currenUser ? (<Redirect to='/'/>): (<SignInSignUp/>)} />
           <Route exact path='/checkout' component={CheckoutPage} />
         </Switch>

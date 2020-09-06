@@ -45,3 +45,15 @@ export const directoryCategory = (directory, categoryArray) => {
     }, [])
 
 }
+
+
+export const directoryItem = (directory, urlArray) => (
+
+
+    directory.find(item => (
+        item.title === urlArray[urlArray.length-1]
+
+    ))
+
+
+)
