@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToCart } from '../../../redux/cart/cart.actions';
+import { ratingHelper } from '../../../generalutils';
 
 // import woodspoon from '../../../img/wood_spoons.jpg';
 
@@ -17,21 +18,21 @@ const ItemCard = (props) => {
 
     //Takes a number rating and returns a ratingArray of list elements 
 
-    const ratingHelper = (rating) => {
-        let ratingArray = [];
+    // const ratingHelper = (rating) => {
+    //     let ratingArray = [];
 
-        for (let i=0; i < 5 ; i++) {
+    //     for (let i=0; i < 5 ; i++) {
 
-            if ( rating > 0) {
-                ratingArray.push(<li className="rated"></li>);
-                rating--;
+    //         if ( rating > 0) {
+    //             ratingArray.push(<li className="rated"></li>);
+    //             rating--;
 
-            } else {
-                ratingArray.push(<li></li>);
-            }
-        }
-        return(ratingArray);
-    }
+    //         } else {
+    //             ratingArray.push(<li></li>);
+    //         }
+    //     }
+    //     return(ratingArray);
+    // }
 
 
 

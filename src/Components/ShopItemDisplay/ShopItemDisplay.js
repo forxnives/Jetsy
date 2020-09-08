@@ -94,6 +94,9 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
 
 
 
+
+
+
     return(
 
         <section>

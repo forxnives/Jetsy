@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 import { directoryPopular  } from './directory.utils' ;
-import { directoryCategory, directoryItem } from './directory.utils';
+import { directoryCategory, directoryItem, directorySellerItems, directoryRelatedItems } from './directory.utils';
 
 export const selectDirectory = state => state.directory;
 
@@ -36,7 +36,23 @@ export const selectItem = url => {
 
     )
 
+}
 
+export const selectSellerItems = seller => {
 
+    return createSelector(
+
+        [selectDirectory],
+        directory => directorySellerItems(directory, seller)
+    )
+}
+
+export const selectRelatedItems = categories => {
+
+    return createSelector(
+
+        [selectDirectory],
+        directory => directoryRelatedItems(directory, categories)
+    )
 }
 

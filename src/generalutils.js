@@ -61,5 +61,21 @@ export const categoryPathParse = (url, toExtract) => {
 
 }
 
+export const ratingHelper = (rating) => {
+    let ratingArray = [];
+
+    for (let i=0; i < 5 ; i++) {
+
+        if ( rating > 0) {
+            ratingArray.push(<li className="rated"></li>);
+            rating--;
+
+        } else {
+            ratingArray.push(<li></li>);
+        }
+    }
+    return(ratingArray);
+}
+
 
 

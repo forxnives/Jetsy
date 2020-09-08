@@ -1,17 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
-import { capitalize, shopStringFormat, urlToCatArray, categoryPathParse } from '../generalutils';
+import { capitalize, shopStringFormat, urlToCatArray, categoryPathParse, ratingHelper } from '../generalutils';
 import { connect } from 'react-redux';
-
+import stripelogo from '../img/stripe-secure.png'
 import { selectItem } from '../redux/directory/directory.selectors';
 
+import { addToCart } from '../redux/cart/cart.actions';
+
+import SellerItemsCarousel from '../Components/SellerItemsCarousel/SellerItemsCarousel';
+import RelatedItemsCarousel from '../Components/RelatedItemsCarousel/RelatedItemsCarousel';
+
+import Gifts from '../Components/About';
 
 
-const ProductPage = ({item, location}) => {
 
-    const sales = 298;
+
+const ProductPage = ({item, location, addToCart}) => {
+
 
     const rating = 4;
+
+    const [ userCountry, setUserCountry ] = useState(null)
 
     const ratingDisplay = (rating) => {
 
@@ -46,7 +55,31 @@ const ProductPage = ({item, location}) => {
         
         return `${dateConcat}`
     }
+
+
+
+    // const userCountry = fetch('https://extreme-ip-lookup.com/json/')
+    //     .then( res => res.json())
+    //     .then(response => {
+    //         return response.country;
+    //     })
+    //     .catch((data, status) => {
+    //         return null;
+    //     })
     
+    // console.log(userCountry)
+
+    async function lookupCountry() {
+
+        const response = await fetch('https://extreme-ip-lookup.com/json/')
+        const json = await response.json();
+        const country = await json.country;
+        setUserCountry(`${country}`)
+        // return country;
+
+    };
+
+    lookupCountry()
 
     
 
@@ -78,7 +111,7 @@ const ProductPage = ({item, location}) => {
                         <div className="product-info-seller">
                             <h2>{item.seller}</h2>
                             <div className="product-info-seller__lower">
-                                <span>{sales} sales </span>
+                                <span>{item.itemsold} sales </span>
                                 <span>&#x7C; </span>
                                 {ratingDisplay(rating)}
 
@@ -89,6 +122,14 @@ const ProductPage = ({item, location}) => {
 
                         
                         <h1>{item.title}</h1>
+
+                        <div className="product-info-rating">
+
+                            <ul className="rating">
+                                {ratingHelper(item.rating)}
+                            </ul>
+                            <span> ({item.ratings}) </span>
+                        </div>
 
                         {bestSellerDisplay(item.itemsold)}
 
@@ -107,25 +148,48 @@ const ProductPage = ({item, location}) => {
 
                         </div>
 
+
+
+                        <div className="product-info-shipsto">
+
+                            <span className='truck'>&#9951;</span>
+                            <h3>Ships to {userCountry}  </h3>
+
+
+                        </div>
+
                         <span>Local taxes included (where applicable)</span>
 
                         <div className="product-info-availability">
 
                             {
                                 item.instock > 0 ?
-                                <span> &#10003; Arrives as soon as {arrivalDate()} if you order today  </span> :
-                                <span> &#10007; Ouf of Stock! </span>
+                                <div className='availability-container'><span> &#10003; Arrives as soon as {arrivalDate()} if you order today  </span></div>  :
+                                null
                             }
 
                         </div>
-                        <div className="product-info-addcartbtn">
 
-                            <div className="btn">
-                                <span>Add To Cart</span>
+                        <div className="product-info-addcartbtn">
+                            <div className="product-info-addcartbtn__inner">
+
+                                <div className="btn" onClick={() => addToCart(item)} >
+                                    <span>Add To Cart</span>
+                                </div>
+
+
+                            </div>
+                        </div>
+
+                        <div className="product-info-secure">
+                        
+                            <div className="stripe-logo">
+                                <img src={stripelogo} alt=""/>
                             </div>
 
-
                         </div>
+
+
                         {/* <div className="product-info-addcartbtn">
 
                         </div> */}
@@ -141,8 +205,33 @@ const ProductPage = ({item, location}) => {
 
 
 
+                <div className="product-lower">
+
+
+
+
+
+                    <RelatedItemsCarousel itemName={item.title} categories={item.categories}/>
+
+                    <h1>More From {item.seller}</h1>
+
+                    <SellerItemsCarousel itemName={item.title} seller={item.seller}/>
+
+
+
+
+
+
+
+                </div>
+
+
+
+
             
             </div>
+
+            <Gifts />
 
 
         </section>
@@ -156,4 +245,8 @@ const mapStateToProps = (state, ownProps) => ({
     item: selectItem(ownProps.location.pathname)(state)
 })
 
-export default withRouter(connect(mapStateToProps)(ProductPage));
+const mapDispatchToProps = dispatch => ({
+    addToCart: item => dispatch(addToCart(item))
+})
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProductPage));

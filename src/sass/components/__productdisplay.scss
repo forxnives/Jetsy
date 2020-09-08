@@ -5,14 +5,15 @@
 
     .product-image {
         width: 60%;
-        border: 2px solid black;
+        // border: 2px solid black;
         border-radius: 7px;
         display: flex;
         justify-content: center;
+        background-color: #EFEFEF;
 
         img {
             max-width: 100%;
-            max-height: 800px;
+            max-height: 450px;
             border-radius: inherit;
             // height: auto;
         }
@@ -32,6 +33,46 @@
             font-size: 3rem;
         }
 
+        &-rating {
+
+            display: flex;
+            align-items: center;
+            margin: 0 0 0    ;
+    
+            span {
+                font-size: 1.2rem;
+                padding: 5px;
+            }
+    
+    
+            .rating {
+                // position: relative;
+                // top: 20px;
+                // float: left;
+                margin: 0;
+                padding: 0;
+    
+                li {
+                    float: left;
+                    display: block;
+                    height: 16px;
+                    width: 16px;
+                    margin-left: 5px;
+                    background: url("https://designmodo.com/demo/ecommerce-css3/img/stars.png") no-repeat 0 0;
+    
+                }
+    
+                li:first-child {
+                    margin-left: 0;
+                }
+    
+                li.rated {
+                    background-position: 0px -16px;
+                }
+            }
+        }
+    
+
         &-bestseller {
             background-color: #F9B200;
             width: 80px;
@@ -47,7 +88,7 @@
         &-price {
 
             display: flex;
-            margin-top: 20px;
+            margin: 20px 0;
             justify-content: space-between;
             align-items: flex-end;
 
@@ -73,18 +114,47 @@
             h1 {
                 margin: 0;
                 font-family: 'Nunito';
-                font-size: 2.2rem;
+                font-size: 2.7rem;
+            }
+        }
+
+        &-shipsto {
+            height: 20px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+            // justify-content: center;
+
+            .truck {
+                font-size: 2.5rem;
+                margin-right: 10px;
+            }
+
+            h3{
+                margin-top: 5px;
             }
         }
 
         &-availability {
             margin: 20px 0;
+
+            .availability-container {
+
+            }
+
+
+
         }
 
         &-addcartbtn {
+            height: 50px;
+        }
+
+        &-addcartbtn__inner {
             display: flex;
 
             justify-content: center;
+            
 
 
             .btn {
@@ -108,5 +178,38 @@
 
 
         }
+
+        &-secure {
+            margin-top: 20px;
+            img {
+                max-width: 300px;
+            }
+            // font-size: 4rem;
+        }
     }
+}
+
+.product-lower {
+    height: auto;
+
+    // display: flex;
+    // justify-content: center;
+
+    h1 {
+        margin: 30px 0;
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .carousel {
+        max-width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+
+
+
+
 }
