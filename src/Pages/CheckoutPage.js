@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CheckoutItem from '../Components/Checkout/CheckoutItem/CheckoutItem';
+import StripeCheckout from '../Components/StripeCheckout/StripeCheckout';
+import {loadStripe} from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+import stripelogo from '../img/stripe-secure.png';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -11,11 +15,28 @@ import {  selectCartItems, selectCartTotalPrice } from '../redux/cart/cart.selec
 
 const CheckoutPage = ({cartItems, cartTotalPrice}) => {
 
+    const [ payToggled, setPayToggled ] = useState(false);
+
+    const stripePromise = loadStripe('pk_test_6pRNASCoBOKtIshFeQd4XMUh');
+
     const checkoutItems = cartItems.map(item => 
 
             <CheckoutItem item={item} { ...item } />
 
         )
+
+
+    const handlePayClick = () => {
+        setPayToggled(!payToggled)
+    }
+
+    const taxCalculate = cartTotalPrice * .15;
+
+    const shippingCalculate = cartTotalPrice * .10;
+
+    const totalPriceCalc = taxCalculate + shippingCalculate + Number(cartTotalPrice);
+
+    // console.log(cartTotalPrice)
 
     return (
 
@@ -41,10 +62,101 @@ const CheckoutPage = ({cartItems, cartTotalPrice}) => {
             <div className="checkout-items">
                 {checkoutItems}
             </div>
-            <div className="checkout-total">
-                <h1 className='checkout-total__txt'>Total:</h1>
-                <h1 className="checkout-total__price">USD ${cartTotalPrice}</h1>
+
+
+
+            <div className="payment">
+
+                <div className="payment-info">
+
+                    <div className="payment-info-logo">
+
+                        <img src={stripelogo} alt=""/>
+
+
+                    </div>
+
+                    <div className="payment-info-legal">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis rerum alias sapiente, saepe dolorum nihil quasi consectetur eligendi quo atque dolores cumque reiciendis molestias repudiandae necessitatibus autem? Veniam, dolorem mollitia?
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div className="payment-submit">
+
+                    <div className="payment-submit-container">
+
+                        <div className="payment-submit-price payment-submit-tax">
+                            <h3 className='payment-submit-tax'> Subtotal: </h3>
+                            <h3 className='payment-submit-tax'> { cartTotalPrice } </h3>
+                        </div>
+
+                        <div className="payment-submit-price payment-submit-tax">
+                            <h3 className='payment-submit-tax'> &nbsp; + Taxes: </h3>
+                            <h3 className='payment-submit-tax'> { taxCalculate.toFixed(2) } </h3>
+                        </div>
+
+
+                        <div className="payment-submit-price payment-submit-shipping">
+                            <h3 className='payment-submit-tax'> &nbsp; + Shipping: </h3>
+                            <h3 className='payment-submit-tax'> { shippingCalculate.toFixed(2) } </h3>
+                        </div>
+
+                        <div className="payment-submit-price payment-submit-total">
+                            <h1 className='payment-submit-total__txt'>Total:</h1>
+                            <h1 className="payment-submit-total__price">USD ${totalPriceCalc.toFixed(2)}</h1>
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div className="payment-submit-button">
+                        
+                        {/* <button label='Pay Now' onClick={() => handlePayClick()}>PAY MEH</button> */}
+
+                        <div className='button' onClick={() => handlePayClick()}><span>PAY NOW</span></div>
+
+                    </div>
+
+
+                    
+                </div>
+
+
             </div>
+
+
+            {
+                payToggled ?
+                (
+                    <div className="stripe-container">
+                        
+                        <div className="stripe-popup">
+
+
+                            <Elements stripe={stripePromise}>
+                                <StripeCheckout />
+                            </Elements>
+
+
+                        </div>
+
+                    </div>
+                ):
+                null
+            }
+
+
+
+
+
+            
         </section>
     )
 }

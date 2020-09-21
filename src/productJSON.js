@@ -1631,7 +1631,7 @@ const ProductJSON =
     },
     {
       "id": 78,
-      "title": "Jamaica Mistake Dressing/Marinade",
+      "title": "Jamaica Mistake Dressing",
       "seller": "Trixie's Treats",
       "rating": 4,
       "ratings": 287,

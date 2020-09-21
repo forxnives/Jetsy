@@ -2,8 +2,9 @@
 
     width: 70%;
     margin: auto;
-    margin-top: 50px;
+    padding-top: 50px;
     margin-bottom: 400px;
+    position: relative;
     // border: 3px solid black;
 
     &-header {
@@ -123,22 +124,184 @@
 
     }
 
-    &-total {
-        width: 100%;
-        margin: 20px 0;
-        text-align: right;
+
+}
+
+.payment {
+
+
+
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    padding: 10px;
+
+
+
+    &-info {
+
         display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        // border: 1px dotted black;
+        
 
+        &-logo {
 
-        &__txt {
-            width: 75%;
+            max-width: 400px;
+            margin-right: 50px;
+
+            img {
+
+                max-width: 100%;
+                height: auto;
+
+            }
+
         }
 
-        &__price {
+        &-legal {
+
+            width: 200px;
             text-align: center;
-            width: 13%;
+            font-size: .8rem;
+
         }
 
+    }
+
+    &-submit {
+
+        border: 1px solid #EFEFEF;
+        border-radius: 20px;
+        -webkit-box-shadow: -6px 7px 16px -8px rgba(0,0,0,0.27);
+        -moz-box-shadow: -6px 7px 16px -8px rgba(0,0,0,0.27);
+        box-shadow: -6px 7px 16px -8px rgba(0,0,0,0.27);
+        min-width: 250px;
+        padding: 20px;
+        margin: 10px 0  0 50px;
+        // display: flex;
+
+        &-container {
+
+            .payment-submit-price {
+                width: 100%;
+                // margin: 20px 0;
+                // text-align: right;
+                display: flex;
+                justify-content: space-between;
+
+                h1 {
+                    margin: 12px 0 0;
+                }
+
+                h3 {
+                    margin: 5px 0 0;
+
+                }
+
+                &:last-child {
+                    // border-top: 1px solid black;
+
+                    position: relative;
+
+                    &::after {
+                        content: "";
+                        background: black;
+                        position: absolute;
+                        top: 3px;
+                        right: 0;
+                        width: 50%;
+                        height: 1px;
+                    }
+                }
+        
+        
+
+        
+        
+            }
+
+
+        }
+
+
+
+        &-button {
+
+            // padding: 30px;
+
+            text-align: center;
+
+            margin-top: 10px;
+            
+            width: 100%;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .button {
+
+
+                width: 50%;
+                height: 100%;
+                // padding: 10px 30px;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                font-size: 1.5rem;
+
+                border-radius: 30px;
+                background-color:#1F180A;
+                color: white;
+                transition: all .2s;
+
+                &:hover {
+                    width: 55%;
+                    // padding: 12px;
+                }
+
+            }
+
+
+        }
+
+        
+    }
+
+
+
+
+}
+
+.stripe-container {
+    position: fixed;
+    // background-color: green;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .stripe-popup {
+        z-index: 5;
+        width: 30%;
+        min-width: 300px;
+        height: 50%;
+        padding: 20px;
+        background-color: white;
+        border: 4px solid $color-pinetree;
+        border-radius: 20px;
+        -webkit-box-shadow: -6px 7px 16px -8px rgba(0,0,0,0.27);
+        -moz-box-shadow: -6px 7px 16px -8px rgba(0,0,0,0.27);
+        box-shadow: -6px 7px 16px -8px rgba(0,0,0,0.27);
 
     }
 }
