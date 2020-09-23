@@ -4,13 +4,16 @@ import { connect } from 'react-redux';
 import { addToCart } from '../../../redux/cart/cart.actions';
 import { ratingHelper } from '../../../generalutils';
 
+
 // import woodspoon from '../../../img/wood_spoons.jpg';
 
 const ItemCard = (props) => {
 
     const { item, addToCart } = props;
 
-    const {id, img, title, seller, rating, ratings, price} = item;
+    const {id, img, title, seller, rating, ratings, price, categories} = item;
+
+    console.log(categories);
 
     const [btnHovered, setBtnHovered] = useState(false);
 
@@ -45,7 +48,10 @@ const ItemCard = (props) => {
                 <div className="item__image">
 
                     <div className={btnHovered ? 'img img-hover' : 'img'}>
-                        <img src={img} alt="wooden spoons"/>
+
+                        <Link to={`/product/${categories.join('/')}/${title}`}>
+                            <img src={img} alt="wooden spoons"/>
+                        </Link>
 
 
                         <div onMouseEnter={() => setBtnHovered(true)} onMouseLeave={()=> setBtnHovered(false)} className="item__cart svg-heart">
