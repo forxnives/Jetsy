@@ -1,6 +1,7 @@
 import React from 'react';
 import hero from '../../img/hero_couple.jpg';
 import maskgirl from '../../img/maskgirl_hero.png';
+import { Link } from 'react-router-dom';
 
 
 
@@ -38,17 +39,19 @@ const Hero = () => {
 
           <div className="hero-grid-right">
 
-              <a href="!#"><img src={maskgirl} alt="" className="hero-grid-right-img__hide"/></a>
+            <Link to={`/shop/clothing&apparel/accessories/masks`}><img src={maskgirl} alt="" className="hero-grid-right-img__hide"/></Link>
               
-              <a href="!#" className="hero-grid-right__txt">
+              <Link to={`/shop/clothing&apparel/accessories/masks`} className="hero-grid-right__txt">
 
                 <div>
-                  <h2 className="">Stay safe with our mask collection
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -7 24 24" aria-hidden="true" focusable="false"><path d="M10,17a1,1,0,0,1-.707-1.707L12.586,12,9.293,8.707a1,1,0,0,1,1.414-1.414L15.414,12l-4.707,4.707A1,1,0,0,1,10,17Z"></path></svg>
-                  </h2>
+
+                    <h2 className="">Stay safe with our mask collection
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -7 24 24" aria-hidden="true" focusable="false"><path d="M10,17a1,1,0,0,1-.707-1.707L12.586,12,9.293,8.707a1,1,0,0,1,1.414-1.414L15.414,12l-4.707,4.707A1,1,0,0,1,10,17Z"></path></svg>
+                    </h2>
+                  
                 </div>
 
-              </a>
+              </Link>
 
           </div>
 

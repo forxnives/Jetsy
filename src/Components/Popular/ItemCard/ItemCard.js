@@ -19,23 +19,6 @@ const ItemCard = (props) => {
 
 
 
-    //Takes a number rating and returns a ratingArray of list elements 
-
-    // const ratingHelper = (rating) => {
-    //     let ratingArray = [];
-
-    //     for (let i=0; i < 5 ; i++) {
-
-    //         if ( rating > 0) {
-    //             ratingArray.push(<li className="rated"></li>);
-    //             rating--;
-
-    //         } else {
-    //             ratingArray.push(<li></li>);
-    //         }
-    //     }
-    //     return(ratingArray);
-    // }
 
 
 

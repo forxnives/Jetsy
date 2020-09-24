@@ -1,11 +1,48 @@
-import React from 'react';
+import React from 'react'
+import shophero from '../../img/rastashirtherocropped.jpg'
 
 
 
 const ShopHome = () => {
 
     return (
-        <h1>HEADER</h1>
+        <section className='shopHome'>
+            <div className='hero-container'>
+
+                <div className='shopHome-hero'>
+
+                    <div className='shopHome-hero-left'>
+
+                    </div>
+
+                    <div className='shopHome-hero-right'>
+
+
+                    </div>
+
+
+                </div>
+
+                <div className='hero-header'>
+
+                    <h2>Find Your</h2>
+
+                    <h1> Colors </h1>
+
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
     )
 }
 

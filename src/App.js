@@ -12,7 +12,7 @@ import Shop from './Pages/Shop';
 
 import ProductPage from './Pages/ProductPage';
 import SignInSignUp from './Pages/SignIn-SignUp';
-import CartPage from './Pages/CartPage';  
+import CartPage from './Pages/CartPage';
 import CheckoutPage from './Pages/CheckoutPage';
 
 import Nav from './Components/Nav/Nav';
@@ -33,7 +33,7 @@ class App extends React.Component {
 
     // const tester = testArray.findIndex(item => item === 46)
 
-
+    
     console.log(ting)
 
   }
