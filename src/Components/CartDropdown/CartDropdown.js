@@ -19,8 +19,6 @@ const CartDropdown = ({cartItems, cartTotalPrice, history}) => {
     )
 
 
-
-
     return(
         <div className="fade-in">
 
@@ -57,11 +55,7 @@ const CartDropdown = ({cartItems, cartTotalPrice, history}) => {
                     <span>Your cart is empty</span>
                 </div>
 
-            
             }
-
-
-
 
         </div>
 

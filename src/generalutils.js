@@ -91,4 +91,10 @@ export const ratingHelper = (rating) => {
 
 
 
+export const linkPathFromCatArray = catArray => {
 
+    return catArray.reduce((accumulator, category) => {
+
+        return accumulator + category + '/';
+    },'product/')
+}
