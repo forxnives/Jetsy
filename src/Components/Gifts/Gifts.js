@@ -24,16 +24,11 @@ const giftsData = [
 const Gifts = () => {
 
 
-
-
     const giftList = giftsData.map(({...otherSectionProps}) =>(
 
         <GiftCard {...otherSectionProps} />
         
     ));
-
-
-
     
     return (
 

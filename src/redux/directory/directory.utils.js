@@ -28,6 +28,26 @@ let checker = (arr, target) => target.every(v => arr.includes(v));
 
 export const directoryCategory = (directory, categoryArray) => {
 
+    if (categoryArray[0].includes('Gift')) {
+
+        let categoryArrayParsed = [categoryArray[0].replace(/\s+/g, '').toLowerCase()]
+        
+        console.log(categoryArray[0].replace(/\s+/g, '').toLowerCase())
+
+        return directory.reduce((accumulator, currentValue) => {
+
+            if (checker(currentValue.giftcat, categoryArrayParsed)) {
+                accumulator.push(currentValue)
+            }
+
+            return accumulator;
+
+        }, [])
+
+
+
+    }
+
     return directory.reduce((accumulator, currentValue) => {
 
 
@@ -35,16 +55,14 @@ export const directoryCategory = (directory, categoryArray) => {
             accumulator.push(currentValue)
         }
 
-
-        // if (currentValue.categories.includes(categoryArray)){
-        //     accumulator.push(currentValue)
-        // };
-
         return accumulator;
 
     }, [])
 
 }
+
+
+
 
 
 export const directoryItem = (directory, urlArray) => (
@@ -85,21 +103,11 @@ export const directoryRelatedItems = (directory, categories) => {
 
     }
 
-    // while (siblingCat.length < 10){
-    //     categories.pop()
-    //     console.log('poppp')
-    //     siblingCat.concat(relatedItemsHelper(directory, categories, siblingCat))
-
-    // }
-
-
-
     return siblingCat;
 
-
-
-    
 }
+
+
 
 const relatedItemsHelper = (directory, categories, startArray) => (
 

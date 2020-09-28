@@ -43,7 +43,8 @@
         }
     
         & li:hover a{
-            background: $color-rhythm;
+            background: #DBF1CD;
+            color: black;
         
         }
     
@@ -58,6 +59,7 @@
     
             & li:hover a{
                 background: #1F180A;
+                color: white;
             }
     
             & li {
@@ -71,8 +73,16 @@
                 left: 100%;
         
                 & li:hover a {
-                    background: $color-rhythm;
+                    background: #DBF1CD;
+                    color: black;
                 
+                }
+
+                & ul {
+                    & li:hover a {
+                        background: #1F180A;
+                        color: white;
+                    }
                 }
         
             }

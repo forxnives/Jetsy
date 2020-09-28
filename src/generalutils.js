@@ -25,10 +25,15 @@ export const urlToCatArray = (url, toExtract) => (
 
 )
 
-export const categoryPathParse = (url, toExtract) => {
+export const categoryPathParse = (url, toExtract, productPage=false) => {
+
 
 
     const parsedCategoryArray = urlToCatArray(url, `${toExtract}`)
+
+
+
+    console.log(parsedCategoryArray)
 
     const linkPathReduced = parsedCategoryArray.reduce((accumulator, category)=>{
         if (accumulator.length > 0) {
@@ -38,9 +43,10 @@ export const categoryPathParse = (url, toExtract) => {
         }else {
             accumulator.push(category)
         }
-
+        console.log(accumulator)
         return accumulator
     }, [])
+
 
 
     
@@ -50,8 +56,14 @@ export const categoryPathParse = (url, toExtract) => {
         shopStringFormat(category)
 
 
-
     ))
+
+    if (productPage) {
+
+        formattedCategoryArray.pop();
+        console.log('prod')
+
+    }
 
     return formattedCategoryArray.map((category, i)=> (
         <Link to={`/shop/${linkPathReduced[i]}`}> <span className='category-path-txt'>{capitalize(formattedCategoryArray[i] + ' >')}</span> </Link>

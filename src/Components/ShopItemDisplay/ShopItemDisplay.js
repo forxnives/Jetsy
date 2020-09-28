@@ -90,11 +90,11 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
         capitalize(shopStringFormat(category))
     )
 
+    console.log(match.url)
 
 
 
-
-
+    console.log(popularList)
 
 
     return(
@@ -152,7 +152,16 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
         
                         <div className='shop-items-container'>
         
-                        {popularList}
+                        {
+                        
+                        
+                        popularList.length ?
+                        (popularList) :
+                        (<h1>No Items Available</h1>)
+                        
+                        
+                        
+                        }
         
                         </div>
         
@@ -168,10 +177,12 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
 }
 
 
+
 const mapStateToProps = (state, ownProps) => ({
         
-
+    
     categoryItems: selectCategory(ownProps.match.url)(state),
+    // categoryItems: selectCategory('/shop/giftsforher')(state),
     cartHidden: selectCartHidden(state),
     sortMode: selectSortMode(state),
     filters: selectFilters(state),

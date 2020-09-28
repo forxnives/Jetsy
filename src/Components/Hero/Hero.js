@@ -18,7 +18,7 @@ const Hero = () => {
 
           <div className="hero-grid-left">
 
-            <a href="!#" className="hero-grid-left__txt">
+            <Link to={`/shop`} className="hero-grid-left__txt">
 
               <div className="txt">
                 <span className="title">Our Biggest Export is</span>
@@ -31,9 +31,9 @@ const Hero = () => {
                 
               </div>
 
-            </a>
+            </Link>
 
-            <a className='imglink' href="!#"><img src={hero} alt="baskets"/></a>
+            <Link className='imglink' to={`/shop`}><img src={hero} alt="baskets"/></Link>
 
           </div>
 

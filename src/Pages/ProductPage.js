@@ -81,7 +81,7 @@ const ProductPage = ({item, location, addToCart}) => {
 
     lookupCountry()
 
-    
+    console.log(categoryPathParse(location.pathname, 'product', true))
 
     return (
     

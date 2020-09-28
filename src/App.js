@@ -32,7 +32,6 @@ class App extends React.Component {
     // const testArray = [4, 9, 2, 8]
 
     // const tester = testArray.findIndex(item => item === 46)
-
     
     console.log(ting)
 

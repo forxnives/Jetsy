@@ -3,6 +3,8 @@ import { withRouter, Link } from 'react-router-dom';
 
 const GiftCard = ({title, img, alt}) => {
 
+    
+
 
     return (
         <Link to={`/shop/${title}`}>
