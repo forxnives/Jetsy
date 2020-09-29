@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.2.1",
     "firebase": "^7.17.2",
     "font-awesome": "^4.7.0",
+    "hero-slider": "^2.0.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-leaf-carousel": "^2.0.3",
@@ -19,7 +20,8 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
-    "reselect": "^4.0.0"
+    "reselect": "^4.0.0",
+    "styled-components": "^5.2.0"
   },
   "scripts": {
     "start": "react-scripts start",

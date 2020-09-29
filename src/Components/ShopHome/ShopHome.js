@@ -1,8 +1,17 @@
 import React from 'react'
+import AutoplayHeroSlider from '../AutoplayHeroSlider/AutoplayHeroSlider';
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+// import HeroSlider, {
+//     Slide,
+//     Nav,
+//     SideNav,
+//     MenuNav,
+//     ButtonsNav,
+//     AutoplayButton,
+//     OverlayContent,
+//   } from 'hero-slider'
+
+
 
 
 import shophero from '../../img/rastashirtherocropped.jpg'
@@ -11,15 +20,50 @@ import shophero from '../../img/rastashirtherocropped.jpg'
 
 const ShopHome = () => {
 
-    const settings = {
-        dots: true,
-        speed: 500,
-        slidesToShow: 1,
-        slidesToScroll: 1
-      };
+
 
     return (
         <section className='shopHome'>
+
+            <div className='shopHome-hero'
+                style={{
+                    color: "#FFF",
+                    'textAlign':'center'
+                }}
+                >
+
+                <AutoplayHeroSlider />
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             {/* <div className='hero-container'>
 
                 <div className='shopHome-hero'>
@@ -49,14 +93,6 @@ const ShopHome = () => {
             </div> */}
 
 
-            <Slider  >
-                <div>
-                    <h1> test1 </h1>
-                </div>
-                <div>
-                    <h1>test2</h1>
-                </div>
-            </Slider>
 
 
         </section>
