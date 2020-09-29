@@ -13,7 +13,7 @@ const ItemCard = (props) => {
 
     const {id, img, title, seller, rating, ratings, price, categories} = item;
 
-    console.log(categories);
+
 
     const [btnHovered, setBtnHovered] = useState(false);
 

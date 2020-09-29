@@ -891,7 +891,7 @@ const ProductJSON =
     },
     {
       "id": 41,
-      "title": "3 x 5 feet Indoor/Outdoor Flag with Grommets",
+      "title": "3 x 5 feet Indoor and Outdoor Flag with Grommets",
       "seller": "Dappa Doops",
       "rating": 5,
       "ratings": 102,
@@ -1251,7 +1251,7 @@ const ProductJSON =
     },
     {
       "id": 59,
-      "title": "Lion Sun/Heat Shield for Cars",
+      "title": "Lion Sun Heat Shield for Cars",
       "seller": "Trixie's Treats",
       "rating": 5,
       "ratings": 1024,

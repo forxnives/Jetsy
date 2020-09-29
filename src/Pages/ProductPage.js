@@ -81,6 +81,7 @@ const ProductPage = ({item, location, addToCart}) => {
 
     lookupCountry()
 
+    console.log(item.categories)
 
     return (
     
@@ -89,7 +90,11 @@ const ProductPage = ({item, location, addToCart}) => {
 
             <div className="shop-header">   
 
-                {categoryPathParse(location.pathname, 'product', true)}
+                {categoryPathParse(location.pathname, 'product', item.categories)}
+
+                {}
+
+
 
 
 

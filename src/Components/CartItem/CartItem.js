@@ -5,7 +5,8 @@ import { Link } from 'react-router-dom';
 const CartItem = ({item}) => {
 
 
-
+    console.log(linkPathFromCatArray(item.categories) + item.title)
+    
     return (
         <div >
             <Link className='item-container' to={linkPathFromCatArray(item.categories) + item.title}>
