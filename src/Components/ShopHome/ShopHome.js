@@ -1,31 +1,41 @@
 import React from 'react'
 import AutoplayHeroSlider from '../AutoplayHeroSlider/AutoplayHeroSlider';
 
-// import HeroSlider, {
-//     Slide,
-//     Nav,
-//     SideNav,
-//     MenuNav,
-//     ButtonsNav,
-//     AutoplayButton,
-//     OverlayContent,
-//   } from 'hero-slider'
+import { connect } from 'react-redux';
+import { selectCartHidden } from '../../redux/cart/cart.selectors';
+
+import Gifts from '../Gifts/Gifts';
+
+import About from '../About'
+
+
+import rastabracelet from '../../img/rastabracelet.png';
+import basketballjersey from '../../img/basketballjersey.png';
+import yardiemovie from '../../img/yardiemovie.jpg';
+import lemonpepperspice from '../../img/lemonpepperspice.jpg';
+
+
+import flagblanket from '../../img/flagblanket.jpg';
 
 
 
 
-import shophero from '../../img/rastashirtherocropped.jpg'
+const ShopHome = ({cartHidden}) => {
 
-
-
-const ShopHome = () => {
+    console.log(cartHidden)
 
 
 
     return (
         <section className='shopHome'>
 
-            <div className='shopHome-hero'
+            <div className={`hero ${
+
+                cartHidden ?
+                null :
+                ('cartHidden')
+
+            }`}
                 style={{
                     color: "#FFF",
                     'textAlign':'center'
@@ -35,25 +45,72 @@ const ShopHome = () => {
                 <AutoplayHeroSlider />
             </div>
 
+            <div className='heronav'>
 
+                <div className='heronav-cat'>
 
+                    <h1>
+                        Arts & Crafts
+                    </h1>
 
+                    <div style={{'backgroundImage': `url(${rastabracelet})`  }} className='heronav-cat-img'>
 
+                    </div>
 
+                </div>
 
+                <div className='heronav-cat'>
 
+                    <h1>
+                        Clothing & Apparel
+                    </h1>
 
+                    <div style={{'backgroundImage': `url(${basketballjersey})`  }} className='heronav-cat-img'>
 
+                    </div>
+                    
+                </div>
 
+                <div className='heronav-cat'>
 
+                    <h1>
+                        Books & Entertainment
+                    </h1>
 
+                    <div style={{'backgroundImage': `url(${yardiemovie})`  }} className='heronav-cat-img'>
 
+                    </div>
+                    
+                </div>
 
+                <div className='heronav-cat'>
 
+                    <h1>
+                        Food & Drink
+                    </h1>
 
+                    <div style={{'backgroundImage': `url(${lemonpepperspice})`  }} className='heronav-cat-img'>
 
+                    </div>
+                    
+                </div>
 
+                <div className='heronav-cat'>
 
+                    <h1>
+                        Miscellaneous
+                    </h1>
+
+                    <div style={{'backgroundImage': `url(${flagblanket})`  }} className='heronav-cat-img'>
+
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <Gifts />
+            <About />
 
 
 
@@ -105,4 +162,11 @@ const ShopHome = () => {
     )
 }
 
-export default ShopHome;
+
+const mapStateToProps = state => ({
+
+    cartHidden: selectCartHidden(state),
+
+})
+
+export default connect(mapStateToProps)(ShopHome);

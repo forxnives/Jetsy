@@ -7,7 +7,10 @@ import HeroSlider, {
 } from 'hero-slider'
 import Wrapper from './Wrapper/Wrapper'
 import Title from './Title/Title'
-import shophero from '../../img/rastashirtherocropped.jpg'
+import femaleclothinghero from '../../img/rastashirtherocropped.jpg';
+import maleclothinghero from '../../img/menclothesherocropped.jpg';
+import coffeehero from '../../img/coffeeherocropped.jpg';
+import jewellryhero from '../../img/jewellryherocropped.jpg';
 
 // Images
 const kyoto = 'https://i.imgur.com/xw5Abku.jpg'
@@ -33,7 +36,7 @@ const app = () => {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 2000,
-        height: '80vh',
+        height: '75vh',
         width: '80vw'
       }}>
       {/* <Wrapper> */}
@@ -48,36 +51,72 @@ const app = () => {
         background={{
           backgroundColor: '#8A8A8A',
           maskBackgroundBlendMode: 'luminosity',
-          backgroundImage: shophero,
+          backgroundImage: femaleclothinghero,
           backgroundAnimation: 'fade'
-        }} />
+        }} >
+
+
+
+        <div className='hero-container'>
+          <h1>Wear Your Colors</h1>
+
+          <h2> Shop Female Clothing and Apparel </h2>
+        </div>
+
+      </Slide>
 
       <Slide
         // shouldRenderMask
         background={{
           backgroundColor: '#8A8A8A',
           maskBackgroundBlendMode: 'luminosity',
-          backgroundImage: tenryuJiTemple,
+          backgroundImage: maleclothinghero,
           backgroundAnimation: 'fade'
-        }} />
+        }} >
+
+        <div className='hero-container'>
+          <h1>Wear Your Colors</h1>
+
+          <h2> Shop Female Clothing and Apparel </h2>
+        </div>
+
+      </Slide>
 
       <Slide
         // shouldRenderMask
         background={{
           backgroundColor: '#8A8A8A',
           maskBackgroundBlendMode: 'luminosity',
-          backgroundImage: hakone,
+          backgroundImage: coffeehero,
           backgroundAnimation: 'fade'
-        }} />
+        }} > 
+
+        <div className='hero-container'>
+          <h1>Wear Your Colors</h1>
+
+          <h2> Shop Female Clothing and Apparel </h2>
+        </div>
+          
+
+
+      </Slide>
 
       <Slide
         // shouldRenderMask
         background={{
           backgroundColor: '#8A8A8A',
           maskBackgroundBlendMode: 'luminosity',
-          backgroundImage: byodoInTemple,
+          backgroundImage: jewellryhero,
           backgroundAnimation: 'fade'
-        }} />
+        }} >
+
+        <div className='hero-container'>
+          <h1>Wear Your Colors</h1>
+
+          <h2> Shop Female Clothing and Apparel </h2>
+        </div>
+
+      </Slide>
 
       <Nav />
     </HeroSlider>
