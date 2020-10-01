@@ -19,6 +19,10 @@
             cursor: pointer;
         }
 
+        .heading-primary {
+            color: black;
+        }
+
 
         &-container {
 
@@ -35,7 +39,7 @@
 
     .heronav {
         background-color: #100D05;
-        width: 80vw;
+        width: 75vw;
         height: 30vh;
         -webkit-border-bottom-right-radius: 20px;
         -webkit-border-bottom-left-radius: 20px;
@@ -65,5 +69,8 @@
         }
     }
 
-
+    // h1 {
+    //     font-size: 24px;
+    // }
+    
 }

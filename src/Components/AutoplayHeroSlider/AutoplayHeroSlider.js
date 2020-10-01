@@ -36,8 +36,8 @@ const app = () => {
         shouldAutoplay: true,
         shouldDisplayButtons: false,
         autoplayDuration: 2000,
-        height: '75vh',
-        width: '80vw'
+        height: '70vh',
+        width: '75vw'
       }}>
       {/* <Wrapper> */}
         {/* <Title>

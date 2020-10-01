@@ -1,0 +1,33 @@
+.category {
+
+
+    display: grid;
+    width: 80vw;
+    grid-template-columns: 40% 30% 30%;
+    height: 70vh;
+    margin: 40px 0;
+    // grid-gap: 20px;
+    // box-sizing: border-box;
+
+
+    &-item {
+        border: 1px solid rgba($color: #000000, $alpha: .3);
+        box-sizing: border-box;
+        // background-color: #FEBE5D;
+        margin: 10px;
+        border-radius: 5px;
+
+        .item-inner {
+
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+
+            // border: 2px solid #FEBE5D;
+            // margin: 0 20px;
+
+
+        }
+    }
+
+}

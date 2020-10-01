@@ -6,7 +6,9 @@ import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import Gifts from '../Gifts/Gifts';
 
+import Features from '../Features/Features';
 import About from '../About'
+import CategoryDisplay from '../CategoryDisplay/CategoryDisplay';
 
 
 import rastabracelet from '../../img/rastabracelet.png';
@@ -22,137 +24,112 @@ import flagblanket from '../../img/flagblanket.jpg';
 
 const ShopHome = ({cartHidden}) => {
 
-    console.log(cartHidden)
-
 
 
     return (
-        <section className='shopHome'>
+        <div>
+            <section className='shopHome'>
 
-            <div className={`hero ${
+                <div className={`hero ${
 
-                cartHidden ?
-                null :
-                ('cartHidden')
+                    cartHidden ?
+                    null :
+                    ('cartHidden')
 
-            }`}
-                style={{
-                    color: "#FFF",
-                    'textAlign':'center'
-                }}
-                >
+                }`}
+                    style={{
+                        color: "#FFF",
+                        'textAlign':'center'
+                    }}
+                    >
+                    <div className="heading-primary">
+                        <h1>Authentic Jamaican Goods.  Sold by independant Jamaican vendors.  Welcome to Caribbean Hut.</h1>
+                    </div>
+                    <AutoplayHeroSlider />
+                </div>
 
-                <AutoplayHeroSlider />
-            </div>
+                <div className='heronav'>
 
-            <div className='heronav'>
+                    <div className='heronav-cat'>
 
-                <div className='heronav-cat'>
+                        <h1>
+                            Arts & Crafts
+                        </h1>
 
-                    <h1>
-                        Arts & Crafts
-                    </h1>
+                        <div style={{'backgroundImage': `url(${rastabracelet})`  }} className='heronav-cat-img'>
 
-                    <div style={{'backgroundImage': `url(${rastabracelet})`  }} className='heronav-cat-img'>
+                        </div>
 
+                    </div>
+
+                    <div className='heronav-cat'>
+
+                        <h1>
+                            Clothing & Apparel
+                        </h1>
+
+                        <div style={{'backgroundImage': `url(${basketballjersey})`  }} className='heronav-cat-img'>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className='heronav-cat'>
+
+                        <h1>
+                            Books & Entertainment
+                        </h1>
+
+                        <div style={{'backgroundImage': `url(${yardiemovie})`  }} className='heronav-cat-img'>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className='heronav-cat'>
+
+                        <h1>
+                            Food & Drink
+                        </h1>
+
+                        <div style={{'backgroundImage': `url(${lemonpepperspice})`  }} className='heronav-cat-img'>
+
+                        </div>
+                        
+                    </div>
+
+                    <div className='heronav-cat'>
+
+                        <h1>
+                            Miscellaneous
+                        </h1>
+
+                        <div style={{'backgroundImage': `url(${flagblanket})`  }} className='heronav-cat-img'>
+
+                        </div>
+                        
                     </div>
 
                 </div>
 
-                <div className='heronav-cat'>
+                <Features />
 
-                    <h1>
-                        Clothing & Apparel
-                    </h1>
 
-                    <div style={{'backgroundImage': `url(${basketballjersey})`  }} className='heronav-cat-img'>
+                <h1 style={{'font-size':'24px'}}> Discover Things You'll Love </h1>
 
-                    </div>
-                    
-                </div>
+                <CategoryDisplay />
 
-                <div className='heronav-cat'>
+            </section>
 
-                    <h1>
-                        Books & Entertainment
-                    </h1>
 
-                    <div style={{'backgroundImage': `url(${yardiemovie})`  }} className='heronav-cat-img'>
-
-                    </div>
-                    
-                </div>
-
-                <div className='heronav-cat'>
-
-                    <h1>
-                        Food & Drink
-                    </h1>
-
-                    <div style={{'backgroundImage': `url(${lemonpepperspice})`  }} className='heronav-cat-img'>
-
-                    </div>
-                    
-                </div>
-
-                <div className='heronav-cat'>
-
-                    <h1>
-                        Miscellaneous
-                    </h1>
-
-                    <div style={{'backgroundImage': `url(${flagblanket})`  }} className='heronav-cat-img'>
-
-                    </div>
-                    
-                </div>
-
-            </div>
 
             <Gifts />
+
             <About />
 
+        </div>
 
-
-
-
-
-
-
-
-
-            {/* <div className='hero-container'>
-
-                <div className='shopHome-hero'>
-
-                    <div className='shopHome-hero-left'>
-
-                    </div>
-
-                    <div className='shopHome-hero-right'>
-
-
-                    </div>
-
-
-                </div>
-
-                <div className='hero-header'>
-
-                    <h2>Find Your</h2>
-
-                    <h1> Colors </h1>
-
-
-
-                </div>
-
-            </div> */}
-
-
-
-
-        </section>
+        
 
 
 
