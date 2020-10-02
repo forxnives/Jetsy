@@ -7,6 +7,7 @@ import { selectFilters } from '../../redux/filters/filters.selectors';
 import ShopItemCard from '../ShopItemCard/ShopItemCard';
 import SortOption from './SortOption/SortOption';
 import ShopFilters from './ShopFilters/ShopFilters';
+import About from '../About';
 
 
 import { createStructuredSelector } from 'reselect';
@@ -42,15 +43,9 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
 
     itemSort(categoryItems, sortMode)
 
-    // const filterArray = [
-    //     {price: [0, 25]}
-    // ]
-
 
     
     const categoryItemsFiltered = productFilter(categoryItems, filters.filters)
-
-    // console.log(filters.filters)
 
 
     const popularList = categoryItemsFiltered.map( item => (
@@ -76,13 +71,8 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
             }return accumulator
         }, [])
 
-
     )
 
-    // const thang = subCatArray(categoryItems, match.params.category)
-    // console.log(thang)
-
-    
 
 
     const shopCategoryTitle = category => (
@@ -167,7 +157,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
         
                     </div>
         
-                {/* </div> */}
+                <About />
 
         </section>
 

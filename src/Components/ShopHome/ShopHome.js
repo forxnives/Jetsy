@@ -2,6 +2,8 @@ import React from 'react'
 import AutoplayHeroSlider from '../AutoplayHeroSlider/AutoplayHeroSlider';
 
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 
 import Gifts from '../Gifts/Gifts';
@@ -9,7 +11,6 @@ import Gifts from '../Gifts/Gifts';
 import Features from '../Features/Features';
 import About from '../About'
 import CategoryDisplay from '../CategoryDisplay/CategoryDisplay';
-
 
 import rastabracelet from '../../img/rastabracelet.png';
 import basketballjersey from '../../img/basketballjersey.png';
@@ -52,61 +53,72 @@ const ShopHome = ({cartHidden}) => {
 
                     <div className='heronav-cat'>
 
-                        <h1>
-                            Arts & Crafts
-                        </h1>
+                        <Link to='/shop/arts&crafts'>
+                            <h1 style={{'color':'white'}}>
+                                Arts & Crafts 
+                            </h1>
+                        </Link>
 
-                        <div style={{'backgroundImage': `url(${rastabracelet})`  }} className='heronav-cat-img'>
+                        <Link to='/shop/arts&crafts' style={{'backgroundImage': `url(${rastabracelet})`  }} className='heronav-cat-img'>
 
-                        </div>
+                        </Link>
 
                     </div>
 
                     <div className='heronav-cat'>
 
-                        <h1>
-                            Clothing & Apparel
-                        </h1>
 
-                        <div style={{'backgroundImage': `url(${basketballjersey})`  }} className='heronav-cat-img'>
+                        <Link to='/shop/clothing&apparel'>
+                            <h1 style={{'color':'white'}}>
+                                Clothing & Apparel   
+                            </h1>
+                        </Link>
 
-                        </div>
+                        <Link to='/shop/clothing&apparel' style={{'backgroundImage': `url(${basketballjersey})`  }} className='heronav-cat-img'>
+
+                        </Link>
                         
                     </div>
 
                     <div className='heronav-cat'>
 
-                        <h1>
-                            Books & Entertainment
-                        </h1>
+                        <Link to='/shop/books&entertainment'>
+                            <h1 style={{'color':'white'}}>
+                                Books & Entertainment   
+                            </h1>
+                        </Link>
 
-                        <div style={{'backgroundImage': `url(${yardiemovie})`  }} className='heronav-cat-img'>
+                        <Link to='/shop/books&entertainment' style={{'backgroundImage': `url(${yardiemovie})`  }} className='heronav-cat-img'>
 
-                        </div>
+                        </Link>
                         
                     </div>
 
                     <div className='heronav-cat'>
 
-                        <h1>
-                            Food & Drink
-                        </h1>
+                        <Link to='/shop/food&drink'>
+                            <h1 style={{'color':'white'}}>
+                                Food & Drink   
+                            </h1>
+                        </Link>
 
-                        <div style={{'backgroundImage': `url(${lemonpepperspice})`  }} className='heronav-cat-img'>
+                        <Link to='/shop/food&drink' style={{'backgroundImage': `url(${lemonpepperspice})`  }} className='heronav-cat-img'>
 
-                        </div>
+                        </Link>
                         
                     </div>
 
                     <div className='heronav-cat'>
 
-                        <h1>
-                            Miscellaneous
-                        </h1>
+                        <Link to='/shop/miscellaneous'>
+                            <h1 style={{'color':'white'}}>
+                                Miscellaneous   
+                            </h1>
+                        </Link>
 
-                        <div style={{'backgroundImage': `url(${flagblanket})`  }} className='heronav-cat-img'>
+                        <Link to='/shop/miscellaneous' style={{'backgroundImage': `url(${flagblanket})`  }} className='heronav-cat-img'>
 
-                        </div>
+                        </Link>
                         
                     </div>
 
@@ -115,12 +127,11 @@ const ShopHome = ({cartHidden}) => {
                 <Features />
 
 
-                <h1 style={{'font-size':'24px'}}> Discover Things You'll Love </h1>
+                <h1 style={{'font-size':'24px'}}> Discover </h1>
 
                 <CategoryDisplay />
 
             </section>
-
 
 
             <Gifts />
@@ -129,11 +140,7 @@ const ShopHome = ({cartHidden}) => {
 
         </div>
 
-        
-
-
-
-
+    
 
 
     )
