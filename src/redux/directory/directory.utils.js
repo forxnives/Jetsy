@@ -2,7 +2,7 @@
 
 export const directoryPopular = (directory) => {
 
-    return directory.reduce((accumulator, currentValue) => {
+    return directory.data.reduce((accumulator, currentValue) => {
 
         if (accumulator.length < 10) {
             accumulator.push(currentValue);
@@ -28,13 +28,16 @@ let checker = (arr, target) => target.every(v => arr.includes(v));
 
 export const directoryCategory = (directory, categoryArray) => {
 
+
+    // const directory.data = initialState[0]
+
     if (categoryArray[0].includes('Gift')) {
 
         let categoryArrayParsed = [categoryArray[0].replace(/\s+/g, '').toLowerCase()]
         
         console.log(categoryArray[0].replace(/\s+/g, '').toLowerCase())
 
-        return directory.reduce((accumulator, currentValue) => {
+        return directory.data.reduce((accumulator, currentValue) => {
 
             if (checker(currentValue.giftcat, categoryArrayParsed)) {
                 accumulator.push(currentValue)
@@ -48,7 +51,7 @@ export const directoryCategory = (directory, categoryArray) => {
 
     }
 
-    return directory.reduce((accumulator, currentValue) => {
+    return directory.data.reduce((accumulator, currentValue) => {
 
 
         if (checker(currentValue.categories, categoryArray)) {
@@ -68,7 +71,7 @@ export const directoryCategory = (directory, categoryArray) => {
 export const directoryItem = (directory, urlArray) => (
 
 
-    directory.find(item => (
+    directory.data.find(item => (
         item.title === urlArray[urlArray.length-1]
 
     ))
@@ -77,13 +80,19 @@ export const directoryItem = (directory, urlArray) => (
 )
 
 export const directorySellerItems = (directory, seller) => (
-    directory.reduce((accumulator, item) =>{
+    directory.data.reduce((accumulator, item) =>{
         if (item.seller === seller){
             accumulator.push(item)
         }
         return accumulator
     }, [] )
 )
+
+
+
+export const directorySearchResults = (directory, searchInput) => {
+    console.log(directory.data)
+}
 
     
 export const directoryRelatedItems = (directory, categories) => {
@@ -93,13 +102,13 @@ export const directoryRelatedItems = (directory, categories) => {
 
     const array = [];
 
-    const siblingCat = relatedItemsHelper(directory, catCopy, array)
+    const siblingCat = relatedItemsHelper(directory.data, catCopy, array)
 
 
     if (siblingCat.length < 11){
         catCopy.pop()
         console.log('poppp')
-        return relatedItemsHelper(directory, catCopy, siblingCat)
+        return relatedItemsHelper(directory.data, catCopy, siblingCat)
 
     }
 
@@ -127,3 +136,4 @@ const relatedItemsHelper = (directory, categories, startArray) => (
 
     }, startArray)
 )
+

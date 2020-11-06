@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 import { directoryPopular  } from './directory.utils' ;
-import { directoryCategory, directoryItem, directorySellerItems, directoryRelatedItems } from './directory.utils';
+import { directoryCategory, directoryItem, directorySellerItems, directoryRelatedItems, directorySearchResults } from './directory.utils';
 
 export const selectDirectory = state => state.directory;
 
@@ -54,5 +54,17 @@ export const selectRelatedItems = categories => {
         [selectDirectory],
         directory => directoryRelatedItems(directory, categories)
     )
+}
+
+export const selectSearchResults = searchInput => {
+
+
+    return createSelector (
+
+        [selectDirectory],
+        directory => directorySearchResults(directory, searchInput)
+
+    )
+
 }
 

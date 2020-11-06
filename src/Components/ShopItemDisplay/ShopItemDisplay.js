@@ -25,7 +25,7 @@ const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) 
 
     const [ sortHidden, toggleSortHidden ] = useState(true);
 
-    console.log(filters)
+    console.log(categoryItems);
 
     const SORT_MAP = {
         'Highest Price': (a, b) => b.price - a.price,
