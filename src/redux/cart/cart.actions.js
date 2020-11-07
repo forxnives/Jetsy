@@ -2,7 +2,7 @@ import { cartActionTypes } from './cart.types';
 
 
 export const toggleCartHidden = () => {
-    console.log(cartActionTypes.TOGGLE_CART_HIDDEN);
+
     
     return ({
 
@@ -22,10 +22,7 @@ export const clearFromCart = (item) => ({
 })
 
 
-// export const quantityIncrement = (item) => ({
-//     type: cartActionTypes.QUANTITY_INCREMENT,
-//     payload: item
-// })
+
 
 
 export const removeFromCart = (item) => ({

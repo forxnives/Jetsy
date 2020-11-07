@@ -5,10 +5,14 @@
     background: #1F180A;
     display: flex;
 
+
+
     justify-content: center;
 
     .spacer {
         width: 4rem;
+
+        
     }
 
 
@@ -17,12 +21,16 @@
         clear: both;
         display: block;
 
+        
+
     }
 
     
     & > ul > li {
         float: left;
         position: relative;
+
+        
         // margin: 0 1rem;
     
     }
@@ -33,6 +41,8 @@
         // padding-left: 30%;
         // padding-right: 30%;
 
+        
+
 
         & li a{
             text-decoration: none;
@@ -40,6 +50,9 @@
             color: white;
             padding: 10px 2vw;
             display: block;
+
+
+            
         }
     
         & li:hover a{

@@ -4,6 +4,7 @@ import { capitalize, shopStringFormat, urlToCatArray, categoryPathParse, ratingH
 import { connect } from 'react-redux';
 import stripelogo from '../img/stripe-secure.png'
 import { selectItem } from '../redux/directory/directory.selectors';
+import { selectCurrentUser } from '../redux/user/user.selectors';
 
 import { addToCart } from '../redux/cart/cart.actions';
 
@@ -15,9 +16,9 @@ import Gifts from '../Components/About';
 
 
 
-const ProductPage = ({item, location, addToCart}) => {
+const ProductPage = ({item, location, addToCart, currentUser}) => {
 
-
+    // console.log(currentUser)
     const rating = 4;
 
     const [ userCountry, setUserCountry ] = useState(null)
@@ -58,17 +59,6 @@ const ProductPage = ({item, location, addToCart}) => {
 
 
 
-    // const userCountry = fetch('https://extreme-ip-lookup.com/json/')
-    //     .then( res => res.json())
-    //     .then(response => {
-    //         return response.country;
-    //     })
-    //     .catch((data, status) => {
-    //         return null;
-    //     })
-    
-    // console.log(userCountry)
-
     async function lookupCountry() {
 
         const response = await fetch('https://extreme-ip-lookup.com/json/')
@@ -81,7 +71,17 @@ const ProductPage = ({item, location, addToCart}) => {
 
     lookupCountry()
 
-    console.log(item.categories)
+    // console.log(item.categories)
+
+    const handleAddToCart = (item) => {
+
+        if (currentUser){
+            addToCart(item)
+        }else{
+            alert('Sign in to add items to cart')
+        }
+
+    }
 
     return (
     
@@ -177,7 +177,7 @@ const ProductPage = ({item, location, addToCart}) => {
                         <div className="product-info-addcartbtn">
                             <div className="product-info-addcartbtn__inner">
 
-                                <div className="btn" onClick={() => addToCart(item)} >
+                                <div className="btn" onClick={() => handleAddToCart(item)} >
                                     <span>Add To Cart</span>
                                 </div>
 
@@ -222,17 +222,10 @@ const ProductPage = ({item, location, addToCart}) => {
                     <SellerItemsCarousel itemName={item.title} seller={item.seller}/>
 
 
-
-
-
-
-
                 </div>
 
 
 
-
-            
             </div>
 
             <Gifts />
@@ -246,7 +239,9 @@ const ProductPage = ({item, location, addToCart}) => {
 
 
 const mapStateToProps = (state, ownProps) => ({
-    item: selectItem(ownProps.location.pathname)(state)
+    item: selectItem(ownProps.location.pathname)(state),
+    currentUser: selectCurrentUser(state)
+
 })
 
 const mapDispatchToProps = dispatch => ({
