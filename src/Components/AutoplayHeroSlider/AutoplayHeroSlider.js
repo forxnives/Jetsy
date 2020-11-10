@@ -50,7 +50,7 @@ const app = () => {
 
 
         <Link to='/shop/clothing&apparel/women' className='hero-container'>
-          <h1>Own Your Colors</h1>
+          <h1>Find Your Colors</h1>
 
           <h2> Shop Female Clothing and Apparel 
             <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><path d="M10,17a1,1,0,0,1-.707-1.707L12.586,12,9.293,8.707a1,1,0,0,1,1.414-1.414L15.414,12l-4.707,4.707A1,1,0,0,1,10,17Z"></path></svg>

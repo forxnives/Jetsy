@@ -62,9 +62,12 @@ export const selectSearchResults = searchInput => {
     return createSelector (
 
         [selectDirectory],
-        directory => directorySearchResults(directory, searchInput)
+        directory => directorySearchResults(directory.data, searchInput)
 
     )
 
 }
+
+
+
 

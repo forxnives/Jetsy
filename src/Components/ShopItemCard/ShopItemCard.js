@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+    import React, {useState} from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { addToCart } from '../../redux/cart/cart.actions';

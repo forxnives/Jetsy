@@ -14,6 +14,7 @@ import ProductPage from './Pages/ProductPage';
 import SignInSignUp from './Pages/SignIn-SignUp';
 import CartPage from './Pages/CartPage';
 import CheckoutPage from './Pages/CheckoutPage';
+import SearchPage from './Pages/SearchPage';
 
 import Nav from './Components/Nav/Nav';
 import Footer from './Components/Footer';
@@ -99,6 +100,7 @@ class App extends React.Component {
           <Route path='/product/:itemId' component={ProductPage} />
           <Route exact path='/signin' render={() => this.props.currenUser ? (<Redirect to='/'/>): (<SignInSignUp/>)} />
           <Route exact path='/checkout' component={CheckoutPage} />
+          <Route path='/search' component= { SearchPage } />
         </Switch>
   
         <Footer />

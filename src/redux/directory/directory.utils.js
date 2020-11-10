@@ -91,7 +91,42 @@ export const directorySellerItems = (directory, seller) => (
 
 
 export const directorySearchResults = (directory, searchInput) => {
-    console.log(directory.data)
+
+    
+
+
+    //LOGIC TO FILTER SEARCH RESULTS HERE
+
+    return directory.reduce((accumulator, item)=>{
+        const itemValuesString = Object.values(item).reduce( (accumulator, value) => {
+            
+            if (value && isNaN(value) && value[0] !== '/'){
+                
+                // accumulator.push(value.toString().toLowerCase())
+                accumulator = accumulator + value.toString().toLowerCase()
+            }
+            
+            return accumulator
+        }, ''  )
+
+
+
+        if (itemValuesString.includes(searchInput)){
+            accumulator.push(item)
+        }
+        return accumulator
+
+
+
+
+
+
+    }, [])
+
+
+    //temporarily returning full directory
+
+    // return directory;
 }
 
     

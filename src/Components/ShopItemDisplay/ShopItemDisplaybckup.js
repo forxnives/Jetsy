@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import { connect } from 'react-redux';
-import { selectCategory, selectSearchResults } from '../../redux/directory/directory.selectors';
+import { selectCategory } from '../../redux/directory/directory.selectors';
 import { selectSortMode } from '../../redux/sort/sort.selectors';
 import { selectFilters } from '../../redux/filters/filters.selectors';
 import ShopItemCard from '../ShopItemCard/ShopItemCard';
@@ -21,7 +21,7 @@ import { capitalize, shopStringFormat, urlToCatArray, categoryPathParse } from '
 
 
 
-const ShopItemDisplay = ({searchResults, categoryItems, match, cartHidden, sortMode, filters}) => {
+const ShopItemDisplay = ({categoryItems, match, cartHidden, sortMode, filters}) => {
 
     const [ sortHidden, toggleSortHidden ] = useState(true);
 
@@ -41,20 +41,13 @@ const ShopItemDisplay = ({searchResults, categoryItems, match, cartHidden, sortM
     }
 
     itemSort(categoryItems, sortMode)
-    itemSort(searchResults, sortMode)
 
-    // console.log(searchResults)
+
     
     const categoryItemsFiltered = productFilter(categoryItems, filters.filters)
 
-    const searchItemsFiltered = productFilter(searchResults, filters.filters)
 
-    const searchItemsList = searchItemsFiltered.map( item => (
-        <ShopItemCard item={item} />
-    ))
-
-
-    const catItemsList = categoryItemsFiltered.map( item => (
+    const popularList = categoryItemsFiltered.map( item => (
 
         <ShopItemCard item={item} />
     
@@ -93,25 +86,11 @@ const ShopItemDisplay = ({searchResults, categoryItems, match, cartHidden, sortM
         <section>
                 <div className="shop-header">   
 
-                    
-                    {
-                    match.params.category &&
-                    categoryPathParse(match.url, 'shop')
-                    }
+                
+                    {categoryPathParse(match.url, 'shop')}
 
                     <div className="shop-header-lower">
-
-
-                        {
-                        match.params.category ?    
-                            (<h1>{shopCategoryTitle(match.params.category)}</h1>):
-                            (<h1>{shopCategoryTitle(`Search Results for '${match.params.searchQuery}'`)}</h1>)
-                            
-                            
-                        }
-
-
-
+                        <h1>{shopCategoryTitle(match.params.category)}</h1>
                         <div onClick={() => toggleSortHidden(!sortHidden)} className={
 
                             cartHidden ?
@@ -152,34 +131,17 @@ const ShopItemDisplay = ({searchResults, categoryItems, match, cartHidden, sortM
         
         
                     <div className='shop-section'>
-
-                        {
-
-                            match.params.category ? 
-                            (<ShopFilters catArray={urlToCatArray(match.url, 'shop')} subCatArray={subCatArray(categoryItems, match.params.category)} />):
-                            (<ShopFilters catArray={urlToCatArray(match.url, 'search')} subCatArray={subCatArray(categoryItems, match.params.category)} />)
-                        }
         
-                        
+                        <ShopFilters catArray={urlToCatArray(match.url, 'shop')} subCatArray={subCatArray(categoryItems, match.params.category)} />
         
                         <div className='shop-items-container'>
         
                         {
-
-                        match.params.category ?
-                        (
-                            catItemsList.length ?
-                            (catItemsList) :
-                            (<h1>No Items Available</h1>)
-                        ):
-                        (
-                            searchItemsList.length ?
-                            (searchItemsList) :
-                            (<h1>No Items Available</h1>)
-                        )
                         
                         
-
+                        popularList.length ?
+                        (popularList) :
+                        (<h1>No Items Available</h1>)
                         
                         
                         
@@ -208,7 +170,6 @@ const mapStateToProps = (state, ownProps) => ({
     cartHidden: selectCartHidden(state),
     sortMode: selectSortMode(state),
     filters: selectFilters(state),
-    searchResults: selectSearchResults(ownProps.match.params.searchQuery)(state)
 
 
 

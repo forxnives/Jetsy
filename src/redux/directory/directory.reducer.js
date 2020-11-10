@@ -1,6 +1,6 @@
-import { directoryActionTypes } from './directory.types';
+// import { directoryActionTypes } from './directory.types';
 import productJSON from '../../productJSON';
-
+import { directorySearchResults } from './directory.utils';
 
 
 
@@ -8,26 +8,26 @@ import productJSON from '../../productJSON';
 
 const INITIAL_STATE = {
     data: productJSON,
-    searchQuery: ''
+    searchResults: []
 }
 
 const directoryReducer = (state=INITIAL_STATE, action) => {
+
+
     switch (action.type){
 
 
-        case (directoryActionTypes.SET_SEARCH_QUERY):
+        // case (directoryActionTypes.SET_SEARCH_QUERY):
 
-            console.log(action.payload)
         
-            return {
-                ...state,
-                searchQuery: action.payload
-            }
+        //     return {
+        //         ...state,
+        //         searchResults: directorySearchResults(state.data, action.payload)
+        //     }
 
 
         default:
             return state
-
 
         
     }
