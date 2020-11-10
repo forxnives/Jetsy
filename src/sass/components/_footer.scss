@@ -27,21 +27,21 @@ footer {
         .greenlogo {
             opacity: 0;
 
-            &:hover {
-                opacity: 100%;
-            }
+            // &:hover {
+            //     opacity: 100%;
+            // }
         }
 
         .orangelogo{
 
             z-index: 3;
 
-            &:hover {
+            // &:hover {
 
-                opacity: 0;
-                z-index: -3;
+            //     opacity: 0;
+            //     z-index: -3;
                 
-            }
+            // }
 
         }
         

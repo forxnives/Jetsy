@@ -36,13 +36,14 @@ const ShopItemCard = (props) => {
         return(ratingArray);
     }
 
-    
+    console.log(props.match.url)
 
 
 
     return (
 
-        <Link to={`/product/${props.match.url.replace('/shop/', '')}/${title}`} className="shop-item">
+        // <Link to={`/product/${props.match.url.replace('/shop/', '')}/${title}`} className="shop-item">
+        <Link to={`/product/${title}`} className="shop-item">
 
             {/* <Link to={ `product/${title}` }> */}
             <div  className='shop-item-div'>

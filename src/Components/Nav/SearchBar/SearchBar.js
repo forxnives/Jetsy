@@ -15,6 +15,8 @@ const SearchBar = ({history}) => {
     const handleSearchSubmit = (e) => {
 
         e.preventDefault()
+        const searchField = document.querySelector('.nav-form-search__input');
+        searchField.value = '';
 
         // setSearchQuery(searchInput)
         history.push(`/search/${searchInput}`)
@@ -39,15 +41,6 @@ const SearchBar = ({history}) => {
 }
 
 
-// const mapStateToProps = state => ({
-
-// })
-
-
-// const mapDispatchToProps = dispatch => ({
-//     setSearchQuery: query => dispatch(setSearchQuery(query))
-
-// })
 
 
 

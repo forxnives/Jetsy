@@ -5,6 +5,23 @@ import logobaregreen from '../img/greenlogobare.png'
 
 
 const Footer = () => {
+
+
+    const handleMouseEnter = () => {
+        const orangeLogoSelect = document.querySelector('.orangelogo')
+        const greenLogoSelect = document.querySelector('.greenlogo')
+        orangeLogoSelect.setAttribute('style', 'opacity: 0');
+        greenLogoSelect.setAttribute('style', 'opacity: 100')
+    }
+
+    const handleMouseLeave = () => {
+        const orangeLogoSelect = document.querySelector('.orangelogo')
+        const greenLogoSelect = document.querySelector('.greenlogo')
+        orangeLogoSelect.setAttribute('style', 'opacity: 100')
+        greenLogoSelect.setAttribute('style', 'opacity: 0');
+    }
+
+
     return (
 
             <footer>
@@ -13,7 +30,7 @@ const Footer = () => {
                     {/* logo */}
                         <a href="!#" className="f-logo">
 
-                            <img src={logobare} className="orangelogo" alt=""/>
+                            <img onMouseEnter={() => handleMouseEnter()} onMouseLeave={() => handleMouseLeave()} src={logobare} className="orangelogo" alt=""/>
                             <img src={logobaregreen} className='greenlogo'  alt=""/>
 
 
