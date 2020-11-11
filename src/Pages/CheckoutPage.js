@@ -13,7 +13,7 @@ import {  selectCartItems, selectCartTotalPrice } from '../redux/cart/cart.selec
 
 
 
-const CheckoutPage = ({cartItems, cartTotalPrice}) => {
+const CheckoutPage = ({cartItems, cartTotalPrice, history}) => {
 
     const [ payToggled, setPayToggled ] = useState(false);
 
@@ -38,7 +38,15 @@ const CheckoutPage = ({cartItems, cartTotalPrice}) => {
 
     // console.log(cartTotalPrice)
 
+
+    if (!cartItems.length){
+        history.push('/shop')
+    }
+    
+
     return (
+
+
 
         <section className="checkout">
             <div className="checkout-header">

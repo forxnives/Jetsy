@@ -1,5 +1,4 @@
 
-
 export const directoryPopular = (directory) => {
 
     return directory.data.reduce((accumulator, currentValue) => {
@@ -28,7 +27,6 @@ let checker = (arr, target) => target.every(v => arr.includes(v));
 
 export const directoryCategory = (directory, categoryArray) => {
 
-
     // const directory.data = initialState[0]
 
     if (categoryArray[0].includes('Gift')) {
@@ -47,37 +45,29 @@ export const directoryCategory = (directory, categoryArray) => {
 
         }, [])
 
-
-
     }
 
     return directory.data.reduce((accumulator, currentValue) => {
-
 
         if (checker(currentValue.categories, categoryArray)) {
             accumulator.push(currentValue)
         }
 
         return accumulator;
-
     }, [])
 
 }
 
 
-
-
-
 export const directoryItem = (directory, urlArray) => (
-
 
     directory.data.find(item => (
         item.title === urlArray[urlArray.length-1]
 
     ))
 
-
 )
+
 
 export const directorySellerItems = (directory, seller) => (
     directory.data.reduce((accumulator, item) =>{
@@ -91,9 +81,6 @@ export const directorySellerItems = (directory, seller) => (
 
 
 export const directorySearchResults = (directory, searchInput) => {
-
-    
-
 
     //LOGIC TO FILTER SEARCH RESULTS HERE
 
@@ -117,13 +104,7 @@ export const directorySearchResults = (directory, searchInput) => {
         return accumulator
 
 
-
-
-
-
     }, [])
-
-
     //temporarily returning full directory
 
     // return directory;
@@ -168,7 +149,5 @@ const relatedItemsHelper = (directory, categories, startArray) => (
         return accumulator;
 
 
-
     }, startArray)
 )
-

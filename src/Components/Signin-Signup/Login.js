@@ -80,11 +80,11 @@ class Login extends React.Component {
 
             <div className="signup-signin-container">
                 <div className="login">
-                    <h1>Already Have an Account?</h1>
+                    <h1>Sign in</h1>
                     <form onSubmit={this.handleSubmit} className="login-form">
                         <div className="login-form-email">
                             <span>email</span>
-                            <FormInput name='email' label={'label'} value={this.state.email} type='email' handleChange={this.handleChange} required />
+                            <FormInput name='email' value={this.state.email} type='email' handleChange={this.handleChange} required />
                         </div>
                         <div className="login-form-password">
                             <span>password</span>

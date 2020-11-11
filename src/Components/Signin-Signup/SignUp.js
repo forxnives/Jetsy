@@ -84,11 +84,11 @@ const SignUp = () => {
                 <form onSubmit={handleSubmit} className="signup-form">
                     <div className="signup-form-displayName">
                         <span>Display Name</span>
-                        <FormInput name='displayName' label={'label'} value={displayName} type='text' handleChange={handleDisplayName} required />
+                        <FormInput name='displayName' value={displayName} type='text' handleChange={handleDisplayName} required />
                     </div>
                     <div className="signup-form-email">
                         <span>Email</span>
-                        <FormInput name='email' label={'label'} value={email} type='email' handleChange={handleEmail} required />
+                        <FormInput name='email' value={email} type='email' handleChange={handleEmail} required />
                     </div>
                     <div className="signup-form-password">
                         <span>Password</span>

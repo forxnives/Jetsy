@@ -1,12 +1,38 @@
 .signup-signin{
     display: flex;
     justify-content: center;
+    margin: 0;
 
-    margin: 10vh;
+    h1 {
+        // max-width: 100px;
+        text-align: center;
+        height: 60px;
+        // margin-top: 20px;
+        // position: absolute;
+        // top: -80px;
+    }
+
+    .form-wrapper {
+        background: #fafafa;
+        margin: 3em auto;
+        padding: 0 1em;
+        min-height: 320px;
+
+        display: flex;
+        // align-items: center;
+        
+      }
+
+
+
 
     .signup-signin-container {
         margin: 30px;
         box-sizing: border-box;
+        padding: 60px;
+        // border: 2px solid green;
+        // position: relative;
+
 
     }
 

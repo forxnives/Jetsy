@@ -20,6 +20,22 @@ const Cart = ({currentUser, hidden, cartItems, cartQuantity, toggleCartHidden}) 
 
     }
 
+    const handleCartQuantity = (quantity) => {
+
+
+        console.log(quantity)
+
+        if (quantity < 9 ) {
+            return <span className='nav-buttons-cart__btn-items'>{quantity}</span>
+        }else {
+            return <span style={{left: 22+'px'}} className='nav-buttons-cart__btn-items'>+9</span>
+        }
+
+        
+
+
+    }
+
 
     
     return (
@@ -45,7 +61,7 @@ const Cart = ({currentUser, hidden, cartItems, cartQuantity, toggleCartHidden}) 
                 {
                     cartItems.length ? 
                         hidden && currentUser ? 
-                            (<span className='nav-buttons-cart__btn-items'>{cartQuantity}</span>) 
+                            (handleCartQuantity(cartQuantity)) 
                             : (null)
                         : (null)
                 }

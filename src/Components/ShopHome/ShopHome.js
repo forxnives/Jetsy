@@ -134,7 +134,7 @@ const ShopHome = ({cartHidden}) => {
             </section>
 
 
-            <Gifts />
+            {/* <Gifts /> */}
 
             <About />
 
