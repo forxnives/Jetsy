@@ -36,12 +36,6 @@ const cartReducer = (state = INITIAL_STATE, action) => {
         
 
 
-        // case (cartActionTypes.QUANTITY_INCREMENT):
-
-        //     return {
-        //         ...state,
-        //         cartItems: incrementFunction(state.cartItems, action.payload)
-        //     }
 
         case (cartActionTypes.REMOVE_FROM_CART):
 

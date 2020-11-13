@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
-
+import { connect } from 'react-redux';
+import { clearFromCart } from '../../redux/cart/cart.actions';
 
 import {
   useStripe,
@@ -12,28 +13,6 @@ import {
 import useResponsiveFontSize from "./useResponsiveFontSize";
 
 
-
-
-
-// const CARD_OPTIONS = {
-//     iconStyle: 'solid',
-//     style: {
-//       base: {
-//         iconColor: '#c4f0ff',
-//         color: '#fff',
-//         fontWeight: 500,
-//         fontFamily: 'Roboto, Open Sans, Segoe UI, sans-serif',
-//         fontSize: '16px',
-//         fontSmoothing: 'antialiased',
-//         ':-webkit-autofill': {color: '#fce883'},
-//         '::placeholder': {color: '#87bbfd'},
-//       },
-//       invalid: {
-//         iconColor: '#ffc7ee',
-//         color: '#ffc7ee',
-//       },
-//     },
-//   };
 
 const useOptions = () => {
     const fontSize = useResponsiveFontSize();
@@ -63,20 +42,17 @@ const useOptions = () => {
 
 
 
-
-const StripeCheckout = ({onChange}) => {
-
+const StripeCheckout = ({onChange, togglePayment, history, cartItems, clearItemFromCart}) => {
 
   const stripe = useStripe();
   const elements = useElements();
   const options = useOptions();
 
-
-
   
  
   const handleSubmit = async (event) => {
     event.preventDefault();
+    console.log('submitted')
 
     if (!stripe || !elements) {
         // Stripe.js has not loaded yet. Make sure to disable
@@ -91,47 +67,30 @@ const StripeCheckout = ({onChange}) => {
     const cardElement = elements.getElement(CardNumberElement);
 
 
-
     const {error, paymentMethod} = await stripe.createPaymentMethod({
         type: 'card',
         card: cardElement,
       });
 
 
-    // const {error, paymentMethod} = await stripe.createPaymentMethod({
-    //   type: 'card',
-    //   card: elements.getElement(CardElement),
-    // });
-
     if (error) {
-        console.log('[error]', error);
+        alert(error.message);
       } else {
-        console.log('[PaymentMethod]', paymentMethod);
+        togglePayment(false)
+        alert('Payment Successful!')
+        // console.log(cartItems)
+        cartItems.forEach(item => {
+          clearItemFromCart(item)
+        })
+
       }
-
-
 
   };
 
 
 
-
-  
- 
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <CardElement options={ CARD_OPTIONS } />
-    //   <button type="submit" disabled={!stripe}>
-    //     Pay
-    //   </button>
-    // </form>
 
-
-    // <fieldset className="FormGroup">
-    //     <div className="FormRow">
-    //         <CardElement options={CARD_OPTIONS} onChange={onChange} />
-    //     </div>
-    // </fieldset>
 
     <form onSubmit={handleSubmit} >
         <label>
@@ -189,7 +148,7 @@ const StripeCheckout = ({onChange}) => {
         />
         </label>
         <button type="submit" disabled={!stripe}>
-        Pay
+        Purchase
         </button>
     </form>
 
@@ -197,7 +156,11 @@ const StripeCheckout = ({onChange}) => {
   );
 };
 
-export default StripeCheckout 
- 
 
- 
+const mapDispatchToProps = dispatch => ({
+  clearItemFromCart: item => dispatch(clearFromCart(item))
+})
+
+
+
+export default connect(null, mapDispatchToProps)(StripeCheckout);

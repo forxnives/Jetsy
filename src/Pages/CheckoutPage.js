@@ -151,9 +151,16 @@ const CheckoutPage = ({cartItems, cartTotalPrice, history}) => {
                         
                         <div className="stripe-popup">
 
+                            <div className='stripe-cancel'>
+                                <img onClick={() => setPayToggled(!payToggled)} src='http://www.pngall.com/wp-content/uploads/5/Black-X-Letter-PNG-Free-Image.png' alt='' />
+
+                            </div>
+
+                            <h2> Enter credit card details </h2>
+
 
                             <Elements stripe={stripePromise}>
-                                <StripeCheckout />
+                                <StripeCheckout cartItems={cartItems} togglePayment={setPayToggled} history={history} />
                             </Elements>
 
 
@@ -163,10 +170,6 @@ const CheckoutPage = ({cartItems, cartTotalPrice, history}) => {
                 ):
                 null
             }
-
-
-
-
 
             
         </section>

@@ -1,6 +1,7 @@
 import React from 'react';
 import FormInput from '../SubComponents/FormInput/FormInput';
 import MainButton from '../SubComponents/MainButton/MainButton';
+import googleLogin from '../../img/googlelogin.png';
 
 import { auth, signInWithGoogle } from '../../Firebase/firebase.utils';
 import {withRouter} from 'react-router-dom';
@@ -20,8 +21,6 @@ class Login extends React.Component {
         }
 
         this.history = props.history;
-
-
 
     }
 
@@ -94,7 +93,7 @@ class Login extends React.Component {
                             Sign In
                         </MainButton>
 
-                        <img onClick={this.handleGoogleSignIn} style={{width:'200px', cursor: 'pointer'}} src='https://i.imgur.com/2dywpzc.png' alt=''/>
+                        <img onClick={this.handleGoogleSignIn} style={{width:'200px', cursor: 'pointer'}} src={googleLogin} alt=''/>
 {/* 
                         <MainButton onClick={this.handleGoogleSignIn} >
                             Sign in with Google
