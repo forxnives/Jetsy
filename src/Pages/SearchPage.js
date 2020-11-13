@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux'
@@ -11,7 +11,9 @@ import ShopItemDisplay from '../Components/ShopItemDisplay/ShopItemDisplay';
 
 const SearchPage = ({match, history}) => {
 
-    console.log(match.params)
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
     

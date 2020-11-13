@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProductData from '../ProductData';
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect';
@@ -8,6 +8,10 @@ import CartItem from '../Components/CartItem/CartItem';
 
 
 const CartPage = ({cartList}) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
 
 

@@ -80,23 +80,25 @@ class Login extends React.Component {
 
             <div className="signup-signin-container">
                 <div className="login">
-                    <h1>Sign in</h1>
+                    <h1 className='signin-h1' >Sign in</h1>
                     <form onSubmit={this.handleSubmit} className="login-form">
                         <div className="login-form-email">
-                            <span>email</span>
+                            <span>Email</span>
                             <FormInput name='email' value={this.state.email} type='email' handleChange={this.handleChange} required />
                         </div>
                         <div className="login-form-password">
-                            <span>password</span>
+                            <span>Password</span>
                             <FormInput name='password' value={this.state.password} type='password' handleChange={this.handleChange} required />
                         </div>
                         <MainButton type='submit'>
                             Sign In
                         </MainButton>
 
+                        <img onClick={this.handleGoogleSignIn} style={{width:'200px', cursor: 'pointer'}} src='https://i.imgur.com/2dywpzc.png' alt=''/>
+{/* 
                         <MainButton onClick={this.handleGoogleSignIn} >
                             Sign in with Google
-                        </MainButton>
+                        </MainButton> */}
                     </form>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
 import ShopCategory from '../Components/ShopCategory/ShopCategory';
@@ -9,7 +9,9 @@ import ShopItemDisplay from '../Components/ShopItemDisplay/ShopItemDisplay';
 
 const Shop = ({match}) => {
 
-    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     return (
     

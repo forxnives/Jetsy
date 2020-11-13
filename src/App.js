@@ -21,7 +21,9 @@ import Footer from './Components/Footer';
 // import { selectCartItemsCount } from './redux/cart/cart.selectors';
 
 import productJSON from './productJSON'
-import { directoryPopular } from './redux/directory/directory.utils'
+import { directoryPopular } from './redux/directory/directory.utils';
+
+
 
 
 
@@ -33,9 +35,8 @@ class App extends React.Component {
     const ting = directoryPopular(productJSON)
 
     // const testArray = [4, 9, 2, 8]
-
     // const tester = testArray.findIndex(item => item === 46)
-    
+
     console.log(ting)
 
   }
@@ -85,27 +86,31 @@ class App extends React.Component {
   render() {
 
     return (
-      <div>
 
-        {/* <button onClick={() => this.testFunc()}>testMe</button> */}
-  
-        <Nav />
-        
-        <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route exact path='/cartitems' component={CartPage} />
-          {/* <Route path='/item/' component={Item} /> */}
+        <div>
 
-          <Route path='/shop' component={Shop} />
-          <Route path='/product/:itemId' component={ProductPage} />
-          <Route exact path='/signin' render={() => this.props.currenUser ? (<Redirect to='/'/>): (<SignInSignUp/>)} />
-          <Route exact path='/checkout' component={CheckoutPage} />
-          <Route path='/search' component= { SearchPage } />
-        </Switch>
-  
-        <Footer />
-  
-      </div>
+          {/* <button onClick={() => this.testFunc()}>testMe</button> */}
+    
+          <Nav />
+
+
+            <Switch>
+              <Route exact path='/' component={HomePage} />
+              <Route exact path='/cartitems' component={CartPage} />
+              {/* <Route path='/item/' component={Item} /> */}
+
+              <Route path='/shop' component={Shop} />
+              <Route path='/product/:itemId' component={ProductPage} />
+              <Route exact path='/signin' render={() => this.props.currenUser ? (<Redirect to='/'/>): (<SignInSignUp/>)} />
+              <Route exact path='/checkout' component={CheckoutPage} />
+              <Route path='/search' component= { SearchPage } />
+            </Switch>
+
+    
+          <Footer />
+    
+        </div>
+
     );
   }
   

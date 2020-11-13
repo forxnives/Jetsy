@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { capitalize, shopStringFormat, urlToCatArray, categoryPathParse, ratingHelper } from '../generalutils';
 import { connect } from 'react-redux';
@@ -17,6 +17,10 @@ import Gifts from '../Components/About';
 
 
 const ProductPage = ({item, location, addToCart, currentUser}) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [item]);
 
     // console.log(currentUser)
     const rating = 4;
@@ -94,10 +98,6 @@ const ProductPage = ({item, location, addToCart, currentUser}) => {
 
                 {}
 
-
-
-
-
                 <div className="shop-header-lower">
 
 
@@ -121,10 +121,8 @@ const ProductPage = ({item, location, addToCart, currentUser}) => {
 
                             </div>
 
-
                         </div>
 
-                        
                         <h1>{item.title}</h1>
 
                         <div className="product-info-rating">
@@ -198,21 +196,13 @@ const ProductPage = ({item, location, addToCart, currentUser}) => {
 
                         </div> */}
 
-                        
-
-
                     </div>
 
 
                 </div>
 
 
-
-
                 <div className="product-lower">
-
-
-
 
 
                     <RelatedItemsCarousel itemName={item.title} categories={item.categories}/>
@@ -224,12 +214,9 @@ const ProductPage = ({item, location, addToCart, currentUser}) => {
 
                 </div>
 
-
-
             </div>
 
             <Gifts />
-
 
         </section>
 

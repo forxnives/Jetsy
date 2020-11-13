@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect } from 'react'
 import AutoplayHeroSlider from '../AutoplayHeroSlider/AutoplayHeroSlider';
 
 import { connect } from 'react-redux';
@@ -25,6 +25,10 @@ import flagblanket from '../../img/flagblanket.jpg';
 
 const ShopHome = ({cartHidden}) => {
 
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
 
     return (

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { connect } from 'react-redux';
 import { selectCategory, selectSearchResults } from '../../redux/directory/directory.selectors';
@@ -22,6 +22,10 @@ import { capitalize, shopStringFormat, urlToCatArray, categoryPathParse } from '
 
 
 const ShopItemDisplay = ({searchResults, categoryItems, match, cartHidden, sortMode, filters}) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const [ sortHidden, toggleSortHidden ] = useState(true);
 
@@ -177,11 +181,7 @@ const ShopItemDisplay = ({searchResults, categoryItems, match, cartHidden, sortM
                             (searchItemsList) :
                             (<h1>No Items Available</h1>)
                         )
-                        
-                        
-
-                        
-                        
+                                                
                         
                         }
         

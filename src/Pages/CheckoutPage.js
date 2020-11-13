@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CheckoutItem from '../Components/Checkout/CheckoutItem/CheckoutItem';
 import StripeCheckout from '../Components/StripeCheckout/StripeCheckout';
 import {loadStripe} from '@stripe/stripe-js';
@@ -14,6 +14,10 @@ import {  selectCartItems, selectCartTotalPrice } from '../redux/cart/cart.selec
 
 
 const CheckoutPage = ({cartItems, cartTotalPrice, history}) => {
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const [ payToggled, setPayToggled ] = useState(false);
 

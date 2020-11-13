@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 
 import Hero from '../Components/Hero/Hero';
@@ -10,6 +10,10 @@ import About from '../Components/About';
 
 
 function HomePage() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
 
   return (
