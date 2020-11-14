@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Jetsy/static/css/main.e92b6f4d.chunk.css",
+    "main.css": "/Jetsy/static/css/main.af48137a.chunk.css",
     "main.js": "/Jetsy/static/js/main.803332e1.chunk.js",
     "main.js.map": "/Jetsy/static/js/main.803332e1.chunk.js.map",
     "runtime-main.js": "/Jetsy/static/js/runtime-main.01df1453.js",
@@ -9,10 +9,10 @@
     "static/js/2.a4fcfdb5.chunk.js": "/Jetsy/static/js/2.a4fcfdb5.chunk.js",
     "static/js/2.a4fcfdb5.chunk.js.map": "/Jetsy/static/js/2.a4fcfdb5.chunk.js.map",
     "index.html": "/Jetsy/index.html",
-    "precache-manifest.decbc3673028a2a3bbcb75bd0a4e6163.js": "/Jetsy/precache-manifest.decbc3673028a2a3bbcb75bd0a4e6163.js",
+    "precache-manifest.29f02e9162f7c8179310f83408eb2316.js": "/Jetsy/precache-manifest.29f02e9162f7c8179310f83408eb2316.js",
     "service-worker.js": "/Jetsy/service-worker.js",
     "static/css/2.9f30ecb4.chunk.css.map": "/Jetsy/static/css/2.9f30ecb4.chunk.css.map",
-    "static/css/main.e92b6f4d.chunk.css.map": "/Jetsy/static/css/main.e92b6f4d.chunk.css.map",
+    "static/css/main.af48137a.chunk.css.map": "/Jetsy/static/css/main.af48137a.chunk.css.map",
     "static/js/2.a4fcfdb5.chunk.js.LICENSE.txt": "/Jetsy/static/js/2.a4fcfdb5.chunk.js.LICENSE.txt",
     "static/media/bandanasoft.png": "/Jetsy/static/media/bandanasoft.4e81d3d1.png",
     "static/media/baseballcap.png": "/Jetsy/static/media/baseballcap.84427bc3.png",
@@ -117,7 +117,7 @@
     "static/js/runtime-main.01df1453.js",
     "static/css/2.9f30ecb4.chunk.css",
     "static/js/2.a4fcfdb5.chunk.js",
-    "static/css/main.e92b6f4d.chunk.css",
+    "static/css/main.af48137a.chunk.css",
     "static/js/main.803332e1.chunk.js"
   ]
 }
