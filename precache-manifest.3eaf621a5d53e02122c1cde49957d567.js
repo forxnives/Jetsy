@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9b89141d44deac3420c8c0aedb189fab",
+    "revision": "df786ff00114490fa949d5a245d909f3",
     "url": "/Jetsy/index.html"
   },
   {
-    "revision": "2b30472d28029b784601",
+    "revision": "d007baf07bc197ab947e",
     "url": "/Jetsy/static/css/2.9f30ecb4.chunk.css"
   },
   {
-    "revision": "ea594012c161d8e8e0bd",
+    "revision": "2c1deecda36c1ac4a341",
     "url": "/Jetsy/static/css/main.e92b6f4d.chunk.css"
   },
   {
-    "revision": "2b30472d28029b784601",
-    "url": "/Jetsy/static/js/2.4a71f9b1.chunk.js"
+    "revision": "d007baf07bc197ab947e",
+    "url": "/Jetsy/static/js/2.a4fcfdb5.chunk.js"
   },
   {
-    "revision": "d0b13a04dd0dc4c851ad16fad1cc6f51",
-    "url": "/Jetsy/static/js/2.4a71f9b1.chunk.js.LICENSE.txt"
+    "revision": "f9e7e68e90600aabdd7d1f759413461d",
+    "url": "/Jetsy/static/js/2.a4fcfdb5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "ea594012c161d8e8e0bd",
-    "url": "/Jetsy/static/js/main.1ebcdffc.chunk.js"
+    "revision": "2c1deecda36c1ac4a341",
+    "url": "/Jetsy/static/js/main.8654b301.chunk.js"
   },
   {
     "revision": "a9de4fe9a5403c11dc71",
