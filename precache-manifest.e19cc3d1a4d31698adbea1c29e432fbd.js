@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "15432655f6b73743d78d13110829fb9f",
+    "revision": "572e7af0a90a8d81dd1937b236a70970",
     "url": "/Jetsy/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Jetsy/static/css/2.9f30ecb4.chunk.css"
   },
   {
-    "revision": "0e778bb18a96a196377e",
+    "revision": "0599919629ef7735d170",
     "url": "/Jetsy/static/css/main.e92b6f4d.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Jetsy/static/js/2.4a71f9b1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0e778bb18a96a196377e",
-    "url": "/Jetsy/static/js/main.10a15d9e.chunk.js"
+    "revision": "0599919629ef7735d170",
+    "url": "/Jetsy/static/js/main.a9090b83.chunk.js"
   },
   {
     "revision": "a9de4fe9a5403c11dc71",
