@@ -7,13 +7,13 @@ import stripelogo from '../img/stripe-secure.png';
 
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import {  selectCartItems, selectCartTotalPrice } from '../redux/cart/cart.selectors';
+import {  selectCartItems, selectCartTotalPrice, selectCartHidden } from '../redux/cart/cart.selectors';
 
 
 
 
 
-const CheckoutPage = ({cartItems, cartTotalPrice, history}) => {
+const CheckoutPage = ({cartItems, cartHidden, cartTotalPrice, history}) => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -52,7 +52,16 @@ const CheckoutPage = ({cartItems, cartTotalPrice, history}) => {
 
 
 
-        <section className="checkout">
+        <section className={`checkout ${
+
+            cartHidden ?
+            null :
+            ('cartHidden')
+
+        }`}>
+
+
+
             <div className="checkout-header">
                 <div className="checkout-header__cat product">
                     <h2>Product</h2>
@@ -178,7 +187,8 @@ const CheckoutPage = ({cartItems, cartTotalPrice, history}) => {
 
 const mapStateToProps = createStructuredSelector({
     cartItems: selectCartItems,
-    cartTotalPrice: selectCartTotalPrice
+    cartTotalPrice: selectCartTotalPrice,
+    cartHidden: selectCartHidden
 })
 
 export default connect(mapStateToProps)(CheckoutPage)

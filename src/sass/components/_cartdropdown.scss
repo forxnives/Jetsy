@@ -95,7 +95,41 @@
         height: 450px;
         width: 400px;
         overflow-y: auto;
+
+
+        scrollbar-color: #b8b8b8 white;
+        scrollbar-width: thin;
+
+
         // z-index: 4;
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: rgb(255,255,255);
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #B8B8B8;
+        }
+        
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #888;
+        }
+
+
+
+
+
+
+
+
 
         a {
             text-decoration: none;
