@@ -43,7 +43,7 @@ const CartDropdown = ({cartItems, cartTotalPrice, history}) => {
 
 
                         </div>
-                        <div onClick={() => history.push('/checkout')} className="button">
+                        <div onClick={() => history.push('/Jetsy/checkout')} className="button">
                             CHECKOUT
                         </div>
                     </div>

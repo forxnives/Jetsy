@@ -24,7 +24,7 @@ const Nav = () => {
             <div className="nav-container nav-container-upper">
 
                 <header className="nav">
-                    <Link to='/'>
+                    <Link to='/Jetsy'>
                         <div className="nav-logo">
                             <img src={logo} alt="temp-logo" className="nav-logo__img"/>
                         </div>

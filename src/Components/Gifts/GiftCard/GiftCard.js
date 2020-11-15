@@ -7,7 +7,7 @@ const GiftCard = ({title, img, alt}) => {
 
 
     return (
-        <Link to={`/shop/${title}`}>
+        <Link to={`/Jetsy/shop/${title}`}>
                                 
             <div className="gifts-card">
                 <div className="gifts-card_image">

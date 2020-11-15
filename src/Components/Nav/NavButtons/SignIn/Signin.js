@@ -23,7 +23,7 @@ const Signin = ({currentUser}) => {
         {
             currentUser ? 
                 (
-                    <Link to='/' onClick={() => auth.signOut() } className="nav-buttons-signin__btn">
+                    <Link to='/Jetsy' onClick={() => auth.signOut() } className="nav-buttons-signin__btn">
                         <span className="nav-buttons-signin__btn-txt">
                             Sign Out
                         </span>
@@ -31,7 +31,7 @@ const Signin = ({currentUser}) => {
                 )
            :
                 (
-                    <Link to='/signin'  className="nav-buttons-signin__btn">
+                    <Link to='/Jetsy/signin'  className="nav-buttons-signin__btn">
                         <span className="nav-buttons-signin__btn-txt">
                             Sign In
                         </span>

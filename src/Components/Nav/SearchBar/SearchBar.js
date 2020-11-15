@@ -19,7 +19,7 @@ const SearchBar = ({history}) => {
         searchField.value = '';
 
         // setSearchQuery(searchInput)
-        history.push(`/search/${searchInput}`)
+        history.push(`/Jetsy/search/${searchInput}`)
 
     }
 

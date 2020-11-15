@@ -66,7 +66,7 @@ class Login extends React.Component {
     handleGoogleSignIn = async () => {
 
         await signInWithGoogle();
-        this.history.push('/')
+        this.history.push('/Jetsy')
 
     }
 

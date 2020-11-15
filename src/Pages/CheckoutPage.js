@@ -44,7 +44,7 @@ const CheckoutPage = ({cartItems, cartHidden, cartTotalPrice, history}) => {
 
 
     if (!cartItems.length){
-        history.push('/shop')
+        history.push('/Jetsy/shop')
     }
     
 

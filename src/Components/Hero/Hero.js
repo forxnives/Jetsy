@@ -18,7 +18,7 @@ const Hero = () => {
 
           <div className="hero-grid-left">
 
-            <Link to={`/shop`} className="hero-grid-left__txt">
+            <Link to={`/Jetsy/shop`} className="hero-grid-left__txt">
 
               <div className="txt">
                 <span className="title">Our Biggest Export is</span>
@@ -33,15 +33,15 @@ const Hero = () => {
 
             </Link>
 
-            <Link className='imglink' to={`/shop`}><img src={hero} alt="baskets"/></Link>
+            <Link className='imglink' to={`/Jetsy/shop`}><img src={hero} alt="baskets"/></Link>
 
           </div>
 
           <div className="hero-grid-right">
 
-            <Link to={`/shop/clothing&apparel/accessories/masks`}><img src={maskgirl} alt="" className="hero-grid-right-img__hide"/></Link>
+            <Link to={`/Jetsy/shop/clothing&apparel/accessories/masks`}><img src={maskgirl} alt="" className="hero-grid-right-img__hide"/></Link>
               
-              <Link to={`/shop/clothing&apparel/accessories/masks`} className="hero-grid-right__txt">
+              <Link to={`/Jetsy/shop/clothing&apparel/accessories/masks`} className="hero-grid-right__txt">
 
                 <div>
 

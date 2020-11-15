@@ -23,7 +23,7 @@ export const shopStringFormat = string => {
 
 export const urlToCatArray = (url, toExtract) => (
 
-        url.replace(`/${toExtract}/`, '').split('/')
+        url.replace(`/Jetsy/${toExtract}/`, '').split('/')
 
 )
 
@@ -63,7 +63,7 @@ export const categoryPathParse = (url, toExtract, existingCat) => {
         ))
 
         return formattedCategoryArray.map((category, i)=> (
-            <Link to={`/shop/${linkPathReduced[i]}`}> <span className='category-path-txt'>{capitalize(formattedCategoryArray[i] + ' >')}</span> </Link>
+            <Link to={`/Jetsy/shop/${linkPathReduced[i]}`}> <span className='category-path-txt'>{capitalize(formattedCategoryArray[i] + ' >')}</span> </Link>
         ))
 
     }else{
@@ -77,7 +77,7 @@ export const categoryPathParse = (url, toExtract, existingCat) => {
         ))
 
         return formattedCategoryArray.map((category, i)=> (
-            <Link to={`/shop/${linkPathReduced[i]}`}> <span className='category-path-txt'>{capitalize(formattedCategoryArray[i] + ' >')}</span> </Link>
+            <Link to={`/Jetsy/shop/${linkPathReduced[i]}`}> <span className='category-path-txt'>{capitalize(formattedCategoryArray[i] + ' >')}</span> </Link>
         ))
     }
 
@@ -107,5 +107,5 @@ export const linkPathFromCatArray = catArray => {
     return catArray.reduce((accumulator, category) => {
 
         return accumulator + category + '/';
-    },'/product/')
+    },'/Jetsy/product/')
 }

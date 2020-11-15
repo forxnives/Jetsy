@@ -81,7 +81,7 @@ const ShopFilters = ({catArray, subCatArray, setFilterArray}) => {
                 return (<div className='category-link'><span>&#129128; </span> <Link to={category}>{capitalize(shopStringFormat(category))}</Link></div>)
             }
 
-            return (<div className='category-link'>&#129128; <Link to={'/shop/' + category}>{capitalize(shopStringFormat(category))}</Link></div>)
+            return (<div className='category-link'>&#129128; <Link to={'/Jetsy/shop/' + category}>{capitalize(shopStringFormat(category))}</Link></div>)
         })
 
     }
@@ -91,7 +91,7 @@ const ShopFilters = ({catArray, subCatArray, setFilterArray}) => {
 
         return subCatArray.map(category => {
 
-            return (<div className='sub-category-link'>&#129130; <Link to={'/shop/' + catArray.join('/') + '/' + category}>{capitalize(shopStringFormat(category))}</Link></div>)
+            return (<div className='sub-category-link'>&#129130; <Link to={'/Jetsy/shop/' + catArray.join('/') + '/' + category}>{capitalize(shopStringFormat(category))}</Link></div>)
         })
 
     }
@@ -145,7 +145,7 @@ const ShopFilters = ({catArray, subCatArray, setFilterArray}) => {
 
             <div className="category-links">
 
-                <div className='all-categories-link'><span>&#129128; </span><Link to='/shop/'>All Categories </Link></div>
+                <div className='all-categories-link'><span>&#129128; </span><Link to='/Jetsy/shop/'>All Categories </Link></div>
 
                     {
 
@@ -309,8 +309,6 @@ const ShopFilters = ({catArray, subCatArray, setFilterArray}) => {
 
 
                 </div>
-
-
 
 
             </div>

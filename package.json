@@ -1,5 +1,5 @@
 {
-  "homepage": "http://forxnives.github.io/CaribbeanHut",
+  "homepage": "http://forxnives.github.io/Jetsy",
   "name": "jetsy",
   "version": "0.1.0",
   "private": true,
@@ -9,7 +9,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "firebase": "^7.17.2",
+    "firebase": "^8.0.2",
     "font-awesome": "^4.7.0",
     "hero-slider": "^2.0.3",
     "react": "^16.13.1",

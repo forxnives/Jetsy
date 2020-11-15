@@ -57,13 +57,13 @@ const ShopHome = ({cartHidden}) => {
 
                     <div className='heronav-cat'>
 
-                        <Link to='/shop/arts&crafts'>
+                        <Link to='/Jetsy/shop/arts&crafts'>
                             <h1 style={{'color':'white'}}>
                                 Arts & Crafts 
                             </h1>
                         </Link>
 
-                        <Link to='/shop/arts&crafts' style={{'backgroundImage': `url(${rastabracelet})`  }} className='heronav-cat-img'>
+                        <Link to='/Jetsy/shop/arts&crafts' style={{'backgroundImage': `url(${rastabracelet})`  }} className='heronav-cat-img'>
 
                         </Link>
 
@@ -72,13 +72,13 @@ const ShopHome = ({cartHidden}) => {
                     <div className='heronav-cat'>
 
 
-                        <Link to='/shop/clothing&apparel'>
+                        <Link to='/Jetsy/shop/clothing&apparel'>
                             <h1 style={{'color':'white'}}>
                                 Clothing & Apparel   
                             </h1>
                         </Link>
 
-                        <Link to='/shop/clothing&apparel' style={{'backgroundImage': `url(${basketballjersey})`  }} className='heronav-cat-img'>
+                        <Link to='/Jetsy/shop/clothing&apparel' style={{'backgroundImage': `url(${basketballjersey})`  }} className='heronav-cat-img'>
 
                         </Link>
                         
@@ -86,13 +86,13 @@ const ShopHome = ({cartHidden}) => {
 
                     <div className='heronav-cat'>
 
-                        <Link to='/shop/books&entertainment'>
+                        <Link to='/Jetsy/shop/books&entertainment'>
                             <h1 style={{'color':'white'}}>
                                 Books & Entertainment   
                             </h1>
                         </Link>
 
-                        <Link to='/shop/books&entertainment' style={{'backgroundImage': `url(${yardiemovie})`  }} className='heronav-cat-img'>
+                        <Link to='/Jetsy/shop/books&entertainment' style={{'backgroundImage': `url(${yardiemovie})`  }} className='heronav-cat-img'>
 
                         </Link>
                         
@@ -100,13 +100,13 @@ const ShopHome = ({cartHidden}) => {
 
                     <div className='heronav-cat'>
 
-                        <Link to='/shop/food&drink'>
+                        <Link to='/Jetsy/shop/food&drink'>
                             <h1 style={{'color':'white'}}>
                                 Food & Drink   
                             </h1>
                         </Link>
 
-                        <Link to='/shop/food&drink' style={{'backgroundImage': `url(${lemonpepperspice})`  }} className='heronav-cat-img'>
+                        <Link to='/Jetsy/shop/food&drink' style={{'backgroundImage': `url(${lemonpepperspice})`  }} className='heronav-cat-img'>
 
                         </Link>
                         
@@ -114,13 +114,13 @@ const ShopHome = ({cartHidden}) => {
 
                     <div className='heronav-cat'>
 
-                        <Link to='/shop/miscellaneous'>
+                        <Link to='/Jetsy/shop/miscellaneous'>
                             <h1 style={{'color':'white'}}>
                                 Miscellaneous   
                             </h1>
                         </Link>
 
-                        <Link to='/shop/miscellaneous' style={{'backgroundImage': `url(${flagblanket})`  }} className='heronav-cat-img'>
+                        <Link to='/Jetsy/shop/miscellaneous' style={{'backgroundImage': `url(${flagblanket})`  }} className='heronav-cat-img'>
 
                         </Link>
                         

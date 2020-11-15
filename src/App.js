@@ -95,15 +95,15 @@ class App extends React.Component {
 
 
             <Switch>
-              <Route exact path='/' component={HomePage} />
-              <Route exact path='/cartitems' component={CartPage} />
+              <Route exact path='/Jetsy' component={HomePage} />
+              <Route exact path='/Jetsy/cartitems' component={CartPage} />
               {/* <Route path='/item/' component={Item} /> */}
 
-              <Route path='/shop' component={Shop} />
-              <Route path='/product/:itemId' component={ProductPage} />
-              <Route exact path='/signin' render={() => this.props.currenUser ? (<Redirect to='/'/>): (<SignInSignUp/>)} />
-              <Route exact path='/checkout' component={CheckoutPage} />
-              <Route path='/search' component= { SearchPage } />
+              <Route path='/Jetsy/shop' component={Shop} />
+              <Route path='/Jetsy/product/:itemId' component={ProductPage} />
+              <Route exact path='/Jetsy/signin' render={() => this.props.currenUser ? (<Redirect to='/Jetsy'/>): (<SignInSignUp/>)} />
+              <Route exact path='/Jetsy/checkout' component={CheckoutPage} />
+              <Route path='/Jetsy/search' component= { SearchPage } />
             </Switch>
 
     

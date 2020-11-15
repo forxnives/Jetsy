@@ -17,7 +17,7 @@ const CategoryDisplay = () => {
         <section className='category'>
 
 
-            <Link to='/shop/miscellaneous/home' className='category-item item-1'  >
+            <Link to='/Jetsy/shop/miscellaneous/home' className='category-item item-1'  >
 
 
                 <div className='item-inner' style={{'backgroundImage': `url(${flagblanket})`}}>  
@@ -34,7 +34,7 @@ const CategoryDisplay = () => {
 
             </Link>
 
-            <Link to='/shop/clothing&apparel/hats&scarfs' className='category-item item-2'>
+            <Link to='/Jetsy/shop/clothing&apparel/hats&scarfs' className='category-item item-2'>
                 <div className='item-inner' style={{'backgroundImage': `url(${rastahatdreadlocks})`}}>  
 
                 
@@ -50,7 +50,7 @@ const CategoryDisplay = () => {
 
             </Link>
 
-            <Link to='/shop/miscellaneous/hair' className='category-item item-3'>
+            <Link to='/Jetsy/shop/miscellaneous/hair' className='category-item item-3'>
                 <div className='item-inner' style={{'backgroundImage': `url(${blackdreadextension})`}}>  
 
                 
@@ -65,7 +65,7 @@ const CategoryDisplay = () => {
 
             </Link>
 
-            <Link to='/shop/clothing&apparel/men' className='category-item item-4'>
+            <Link to='/Jetsy/shop/clothing&apparel/men' className='category-item item-4'>
                 <div className='item-inner' style={{'backgroundImage': `url(${goodvibesmenshirt})`}}>  
 
                 
@@ -81,7 +81,7 @@ const CategoryDisplay = () => {
 
             </Link>                                    
 
-            <Link to='/shop/books&entertainment/movies' className='category-item item-5'>
+            <Link to='/Jetsy/shop/books&entertainment/movies' className='category-item item-5'>
                 <div className='item-inner' style={{'backgroundImage': `url(${kingstonparadise})`}}>  
 
                 
@@ -97,7 +97,7 @@ const CategoryDisplay = () => {
 
             </Link>
 
-            <Link to='/shop/miscellaneous/flags' className='category-item item-6'>
+            <Link to='/Jetsy/shop/miscellaneous/flags' className='category-item item-6'>
                 <div className='item-inner' style={{'backgroundImage': `url(${thickflag})`}}>  
 
                 

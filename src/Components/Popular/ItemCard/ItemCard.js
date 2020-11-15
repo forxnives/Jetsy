@@ -38,7 +38,7 @@ const ItemCard = (props) => {
 
                     <div className={btnHovered ? 'img img-hover' : 'img'}>
 
-                        <Link to={`/product/${categories.join('/')}/${title}`}>
+                        <Link to={`/Jetsy/product/${categories.join('/')}/${title}`}>
                             <img src={img} alt="wooden spoons"/>
                         </Link>
 

@@ -51,7 +51,7 @@ const app = () => {
 
 
 
-        <Link to='/shop/food&drink/coffee' className='hero-container'>
+        <Link to='/Jetsy/shop/food&drink/coffee' className='hero-container'>
           <h1>Treat Yourself</h1>
 
           <h2> Shop for Blue Mountain Coffee 
@@ -85,7 +85,7 @@ const app = () => {
 
 
 
-          <Link to='/shop/clothing&apparel/women' className='hero-container'>
+          <Link to='/Jetsy/shop/clothing&apparel/women' className='hero-container'>
           <h1>Find Your Colors</h1>
 
           <h2> Shop Female Clothing and Apparel 
@@ -124,7 +124,7 @@ const app = () => {
 
 
 
-          <Link to='/shop/arts&crafts/jewellery' className='hero-container'>
+          <Link to='/Jetsy/shop/arts&crafts/jewellery' className='hero-container'>
           <h1>Add Some Sparkle</h1>
 
           <h2> Shop for Jewellry 
@@ -158,7 +158,7 @@ const app = () => {
 
 
 
-          <Link to='/shop/clothing&apparel/accessories' className='hero-container'>
+          <Link to='/Jetsy/shop/clothing&apparel/accessories' className='hero-container'>
           <h1>Add Some Spice</h1>
 
           <h2> Shop for Accessories 

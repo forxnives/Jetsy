@@ -18,7 +18,7 @@ export const selectCategory = url => {
     return createSelector(
 
     [selectDirectory],
-    directory => directoryCategory(directory, url.replace('/shop/', '').split('/'))
+    directory => directoryCategory(directory, url.replace('/Jetsy/shop/', '').split('/'))
 
     )
 }
@@ -32,7 +32,7 @@ export const selectItem = url => {
 
 
         [selectDirectory],
-        directory => directoryItem(directory, url.replace('/shop/', '').split('/') )
+        directory => directoryItem(directory, url.replace('/Jetsy/shop/', '').split('/') )
 
     )
 
