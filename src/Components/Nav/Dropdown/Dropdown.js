@@ -20,7 +20,7 @@ const Dropdown = () => {
                                     
                             <DropdownListItem itemPath='/Jetsy/shop/arts&crafts/jewellery/bracelets' itemName='Bracelets' />
                             <DropdownListItem itemPath='/Jetsy/shop/arts&crafts/jewellery/necklaces' itemName='Necklaces' />
-                            <li><Link to='/shop/arts&crafts/jewellery/necklaces'>Necklaces</Link></li>
+                            {/* <li><Link to='/shop/arts&crafts/jewellery/necklaces'>Necklaces</Link></li> */}
                             <li><Link to="/Jetsy/shop/arts&crafts/jewellery/earrings">Earrings</Link></li>
 
                         </ul>
